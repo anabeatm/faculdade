@@ -7,11 +7,11 @@ import math
 
 area_pintar = float(input("Digite o tamanho em metros quadrados da área a ser pintado: "))
 
-litros_necessarios = area_pintar / 3 # A quantidade de litros necessários para cobrir toda a áres a ser pintada 
-# é feita dividindo a área coberta por 3 metros a cada 1 litro.
+litros_necessarios = area_pintar / 3 # A quantidade de litros necessários para cobrir toda a área a ser pintada 
+# é feita dividindo a área coberta por 3 metros (a cada 1 litro).
 latas_necessarias = math.ceil(litros_necessarios / 18) # Como uma lata contém 18 litros, dividimos os litros necessários por 18, logo que é o total de cada lata.
 # Arredondando esse valor para que a quantidade mínima seja necessária.
-precoTotal = latas_necessarias * 120 # Por últimos calculamos o valor total mutiplicando a quantidade de latas total pelo preço de cada lata.
+precoTotal = latas_necessarias * 120 # Por último calculamos o valor total mutiplicando a quantidade de latas total pelo preço de cada lata.
 
 print(f"Quantidade total de latas necessárias: {latas_necessarias}.")
 print(f"Preço total: {precoTotal:.2f}")
