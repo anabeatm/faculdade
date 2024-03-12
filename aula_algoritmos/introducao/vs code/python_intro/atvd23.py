@@ -13,4 +13,14 @@ horas_mes = int(input("Digite quantas horas você trabalha por mês: "))
 salarioBruto = ganha_hora * horas_mes
 print(f"Salário bruto: R${salarioBruto}")
 
-imposto_renda = 
+imposto_renda = salarioBruto * (7.5 / 100)
+print(f"Imposto de renda: {imposto_renda:.2f}")
+
+inss = salarioBruto * (8 / 100)
+print(f"INSS: {inss}")
+
+sindicato = salarioBruto * (1 / 100)
+print(f"Sindicato: {sindicato}")
+
+salarioLiquido = salarioBruto - (imposto_renda + inss + sindicato)
+print(f"Salário líquido: {salarioLiquido:.2f}")
