@@ -1,0 +1,2 @@
+"O custo de alguma coisa é aquilo de que desiste para obtê-la" diz sobre o #2 Princípio da Economia dos [[10 Princípios da Economia]].
+Custo de Oportunidade significa o custo do [[Tradeoff Constante]] que as pessoas passam. Nele, você arca com as consequência ao escolher X invés de Y. É a relação entre [[custos x benefícios]].

@@ -1,0 +1,1 @@
+"O comércio pode ser uma boa forma de se organizar a sociedade" diz sobre o #5 Princípio da Economia dos [[10 Princípios da Economia]]. Significa que o comércio permite que os países especializar-se no que fazem de melhor desfrutar disso. Porém, em consequência, faz com que o próprio país depende de outros.

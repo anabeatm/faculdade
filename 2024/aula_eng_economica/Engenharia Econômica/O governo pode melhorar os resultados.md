@@ -1,0 +1,2 @@
+"Às vezes os governos podem melhorar os resultados dos mercados" diz sobre o #7 Princípio de Economia dos [[10 Princípios da Economia]].
+Por conta das [[falhas de mercados]], o governo (às vezes) necessita intervir e ==promover eficiência e equidade==.

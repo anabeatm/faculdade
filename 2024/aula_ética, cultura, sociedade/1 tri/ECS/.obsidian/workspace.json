@@ -1,0 +1,167 @@
+{
+  "main": {
+    "id": "5dc6dd29bad7f213",
+    "type": "split",
+    "children": [
+      {
+        "id": "6319f012517d7fc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "21ba9164cb7c0830",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ética Profissional.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "76abdd6bebf274fc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9405cc293f775ccf",
+    "type": "split",
+    "children": [
+      {
+        "id": "dbed001c28c8ed7e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f739f3e0f42d5c21",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime"
+              }
+            }
+          },
+          {
+            "id": "9549e3e8a4059208",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0d648fe76218e39e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "8db96eeadb1996ac",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7aa0f5b1d13f1e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5883934f018d3622",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Ética Profissional.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8c6065c37ea98580",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Ética Profissional.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "838d7ffdf02171fd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "49ee0e507fe12ff2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Ética Profissional.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "21ba9164cb7c0830",
+  "lastOpenFiles": [
+    "Determinismo.md",
+    "Utilitarismo.md",
+    "Deontologia.md",
+    "Liberdade.md",
+    "Ética Profissional.md",
+    "().md",
+    "Sem título"
+  ]
+}

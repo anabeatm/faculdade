@@ -1,0 +1,2 @@
+"O padrão de vida de um país depende da sua capacidade de produzir bens e serviços" diz sobre o #8 Princípio da Economia dos [[10 Princípios da Economia]]. 
+Pois o desenvolvimento econômico de um país depende do seu PIB. "==Em um fluxo circular de renda, tudo que é produzido é, de alguma forma, remunerado.=="

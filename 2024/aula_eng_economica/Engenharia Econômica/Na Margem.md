@@ -1,0 +1,1 @@
+"Agentes racionais pensam na margem" diz sobre o #3 Princípio da Economia dos [[10 Princípios da Economia]]. Significa que as pessoas fazem suas decisões a partir dos benefícios marginais com os custos marginais. Ou seja, uma pessoa marginal só vai tomar uma decisão se, e somente se, o benefício for maior que o custo.

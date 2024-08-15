@@ -1,0 +1,2 @@
+"As pessoas vivem um constante tradeoff" diz sobre o #1 Princípio da Economia dos [[10 Princípios da Economia]].
+Viver um tradeoff constante significa que as pessoas estão o tempo todo passando por situações conflitantes, ou seja, as pessoas estarão passando por situações onde terá que escolher entre X e Y, porém não tendo a opção de escolher ambas ao mesmo tempo.

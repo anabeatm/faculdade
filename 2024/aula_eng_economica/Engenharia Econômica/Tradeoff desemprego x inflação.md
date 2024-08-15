@@ -1,0 +1,2 @@
+"A sociedade enfrenta um tradeoff de curto prazo entre inflação e desemprego" diz sobre o #10 Princípio da Economia dos [[10 Princípios da Economia]].
+O combate da inflação está associado a um aumento temporário do desemprego => [[Curva de Phillips]].

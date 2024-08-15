@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "7657ecdcbb8da5dc",
+    "type": "split",
+    "children": [
+      {
+        "id": "bcadb94512d3acea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b8b43f8685aef0dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4fe7f91addf0e9d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "0fc14a64cd82996a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05e717c554684330",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byCreatedTime"
+              }
+            }
+          },
+          {
+            "id": "5818d4faa760b7c3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6bb9120b1c599516",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0a46179c1f15fb3d",
+    "type": "split",
+    "children": [
+      {
+        "id": "bbbec3b983c47586",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8e4b6d484dc7989",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ea9a08a73b7082c4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8be84c5e6d0c1c3c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "42523f1d2fcdf098",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "b8b43f8685aef0dc",
+  "lastOpenFiles": [
+    "Tradeoff desemprego x inflação.md",
+    "Os preços sobem se emitir moedas demais.md",
+    "Um país depende de seus bens e serviços.md",
+    "O governo pode melhorar os resultados.md",
+    "Boa forma de organizar a atividade econômica.md",
+    "Boa forma de organizar a sociedade.md",
+    "Incentivos.md",
+    "Na Margem.md",
+    "Custo de Oportunidade.md",
+    "Tradeoff Constante.md",
+    "2 Princípio da Economia.md",
+    "4 Princípio da Economia.md",
+    "Welcome.md"
+  ]
+}
