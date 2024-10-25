@@ -1,4 +1,5 @@
-# Crie um vetor com 4 números decimais (ponto-flutuante) de modo que o usuário do programa vá digitar esses valores.
+# Crie um vetor com 4 números decimais (ponto-flutuante) de modo que o usuário do programa 
+# vá digitar esses valores.
 vetor4 = [0.0] * 4
 
 vetor4[0] = float(input("Informe um número flutuante: "))

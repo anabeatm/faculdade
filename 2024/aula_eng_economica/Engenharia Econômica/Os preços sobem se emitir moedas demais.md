@@ -1,2 +1,0 @@
-"Os preços sobem quando o governo emite moeda demais" diz sobre o #9 Princípio da Economia dos [[10 Princípios da Economia]].
-Significa que, quando há mais moedas, a demanda pelos produtos aumentam, porém a sua produção diminui por não conseguirem atender essa mesma demanda. Os preços dos produtos resultam em se elevando, causado uma inflação.
