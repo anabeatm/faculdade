@@ -28,47 +28,105 @@ opcao = funcoes.menu()
 # do triângulo= (b . h) / 2
 # do trapézio = ((B + b).h) / 2
 
+# Faça um programa para calcular o Fatorial de um número. Para o cálculo do fatorial, sabemos que n! depende de (n-1)!; 
+# este por sua vez depende de (n-2)!; e, assim por diante, até que n seja 1, quando então tem-se que fatorial de 1 é 
+# igual a 1 mesmo. Utilize uma função que recebe como parâmetro o número a ser calculado o fatorial, do tipo inteiro, 
+# e retorna o fatorial deste número, também do tipo inteiro.
+
+# Faça uma função que receba um vetor como parâmetro e retorne apenas o maior valor deste vetor.
+
+# Faça uma função que receba um vetor como parâmetro e retorne apenas o menor valor deste vetor.
+
+# Faça uma função para receber um vetor como parâmetro, calcular a soma desse vetor e retornar apenas a média dos valores.
+
+# Construa uma função que receba por parâmetro uma data no formato DD/MM/AAAA e devolva uma string no formato DD de Mês 
+# Por Extenso de AAAA. Para pegar o mês por extenso, utilize a função criada no exercício 3. Por exemplo: 18/09/2019 
+# retorna 18 de Setembro de 2019.
+
+# Faça uma função que retorne o reverso de um número inteiro informado por parâmetro. Por exemplo: 127 retorna 721.
+
+
+
 if(opcao == 1):
-    opcao1 = funcoes.retornarNum()
-    print("O número solicitado foi:", opcao1)
+    resultado = funcoes.retornarNum()
+    print("O número solicitado foi:", resultado)
 
 elif(opcao == 2):
     numero = int(input("Número inteiro: "))
-    opcao2 = funcoes.aleatorioNum(numero)
-    print("O número aleatório é", opcao2)
+    resultado = funcoes.aleatorioNum(numero)
+    print("O número aleatório é", resultado)
 
 elif(opcao == 3):
     superior = int(input("Defina o máximo: "))
     inferior = int(input("Defina o mínimo: "))
-    opcao3 = funcoes.aleatorioNumPar(superior, inferior)
-    opcao3a = funcoes.aleatorioNumImpar(superior, inferior)
-    print("O número aleatório PAR é:", opcao3)
-    print("O número aleatório ÍMPAR é:", opcao3a)
+    resultado = funcoes.aleatorioNumPar(superior, inferior)
+    resultadoI = funcoes.aleatorioNumImpar(superior, inferior)
+    print("O número aleatório PAR é:", resultado)
+    print("O número aleatório ÍMPAR é:", resultadoI)
 
 elif(opcao == 4):
     numero = int(input("Número inteiro entre 1 a 12: "))
-    opcao4 = funcoes.numerosMeses(numero)
+    resultado = funcoes.numerosMeses(numero)
 
 elif(opcao == 5):
     area = float(input("Qual o tamanho da área a ser calculada? R: "))
-    opcao5 = funcoes.quadradoDeX(area)
-    print(f"A área {area} é: {opcao5:.2f}")
+    resultado = funcoes.quadradoDeX(area)
+    print(f"A área {area} é: {resultado:.2f}")
 
 elif(opcao == 6):
     base = float(input("Base: "))
     altura = float(input("Altura: "))
-    opcao6 = funcoes.areaRetangulo(base, altura)
-    print(f"A área do retângulo é: {opcao6:.2f}")
+    resultado = funcoes.areaRetangulo(base, altura)
+    print(f"A área do retângulo é: {resultado:.2f}")
 
 elif(opcao == 7):
     base = float(input("Base: "))
     altura = float(input("Altura: "))
-    opcao7 = funcoes.areaTriangulo(base, altura)
-    print(f"A área do triângulo é: {opcao7:.2f}")
+    resultado = funcoes.areaTriangulo(base, altura)
+    print(f"A área do triângulo é: {resultado:.2f}")
 
 elif(opcao == 8):
     baseMaior = float(input("Base maior: "))
     baseMenor = float(input("Base menor: "))
     altura = float(input("Altura: "))
-    opcao8 = funcoes.areaTrapezio(baseMaior, baseMenor, altura)
-    print(f"A área do trapézio é: {opcao8:.2f}")
+    resultado = funcoes.areaTrapezio(baseMaior, baseMenor, altura)
+    print(f"A área do trapézio é: {resultado:.2f}")
+
+elif(opcao == 9):
+    numero = int(input("Fatorial de: "))
+    resultado = funcoes.fatorial(numero)
+    print(f"O fatorial de {numero}! é {resultado}.")
+
+elif(opcao == 10):
+    tamVetor = int(input("Defina o tamanho do vetor: "))
+    vetor = [0] * tamVetor
+    for i in range(0, len(vetor)):
+        vetor[i] = int(input(f"Coloque o {i + 1}° valor: "))
+    resultado = funcoes.maiorVetor(vetor)
+    print(f"O maior valor do vetor é {resultado}.")
+
+elif(opcao == 11):
+    tamVetor = int(input("Defina o tamanho do vetor: "))
+    vetor = [0] * tamVetor
+    for i in range(0, len(vetor)):
+        vetor[i] = int(input(f"Coloque o {i + 1}° valor: "))
+    resultado = funcoes.menorVetor(vetor)
+    print(f"O menor valor do vetor é {resultado}.")
+
+elif(opcao == 12):
+    tamVetor = int(input("Defina o tamanho do vetor: "))
+    vetor = [0] * tamVetor
+    for i in range(0, len(vetor)):
+        vetor[i] = int(input(f"Coloque o {i + 1}° valor: "))
+    resultado = funcoes.mediaVetor(vetor)
+    print(f"A média do vetor é {resultado:.2f}")
+
+elif(opcao == 13):
+    data = input("Escreva uma data no formato DD/MM/AAAA: ")
+    resultado = funcoes.formatarData(data)
+    print(resultado)
+
+elif(opcao == 14):
+    numero = input("Digite uma sequência númerica: ")
+    resultado = funcoes.inversoNumero(numero)
+    print(resultado)
