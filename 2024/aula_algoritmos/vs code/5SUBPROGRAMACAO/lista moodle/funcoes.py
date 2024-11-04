@@ -134,7 +134,69 @@ def inversoNumero(numero):
     numeroInvertido = int(numeroInvertido)
     return numeroInvertido
 
+def inversoNome(nome):
+    nomeInvertido = nome[::-1]
+    return nomeInvertido
 
+def contarVogais(nome):
+    vogais = 'aeiouAEIOU'
+    contador = 0
+    for caractere in nome:
+        if(caractere in vogais):
+            contador += 1
+
+    return contador
+
+def embaralharPalavras(texto):
+    texto = texto.lower() # a função começa convertendo a string texto para minúsculas, garantindo que o resultado esteja todo em caixa baixa
+    tamanho = len(texto) # em seguida, define variáveis auxiliares: tamanho, que guarda o comprimento da string
+    textoEmbaralhado = ""  # textoEmbaralhado uma string vazia onde serão armazenados os caracteres embaralhados
+    indicesUsados = "" # e indicesUsados, também vazia, que registra os índices já selecionados para evitar repetições
+
+    while(len(textoEmbaralhado) < tamanho): # a função então entra em um loop que continua até textoEmbaralhado ter o mesmo tamanho que a string original
+        i = random.randint(0, tamanho - 1) # em cada iteração, ela gera um índice aleatório que aponta para um caractere de texto verificando se esse índice já foi usado
+        if(str(i) not in indicesUsados): # se não foi, o caractere correspondente é adicionado a textoEmbaralhado e o índice é registrado em indicesUsados
+            textoEmbaralhado += texto[i]
+            indicesUsados += str(i)
+    # assim, o loop segue até todos os caracteres serem incluídos de forma aleatória em textoEmbaralhado, que é então retornada como a string embaralhada
+    return textoEmbaralhado
+
+def gerarSenha(tamanho):
+    letrasMaiusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    letrasMinusculas = "abcdefghijklmnopqrstuvwxyz"
+    numeros = "0123456789"
+    caracteresEspeciais = "!@#$%&*()-+[{]}?"
+    todosCaracteres = letrasMaiusculas + letrasMinusculas + numeros + caracteresEspeciais
+    
+    senha = ""
+    
+    for i in range(0, tamanho):
+        indiceAleatorio = random.randint(0, len(todosCaracteres) - 1)
+        senha += todosCaracteres[indiceAleatorio]
+    
+    return senha
+
+def percentualAumento(cargo):
+    if(cargo == "gerente"):
+        return 10
+    elif(cargo == "engenheiro"):
+        return 20
+    elif(cargo == "técnico" or cargo == "tecnico"):
+        return 30
+    else:
+        return 5
+def calcularNovoSalario(salario, cargo):
+    aumentoPercentual = percentualAumento(cargo)
+    aumento = (salario * aumentoPercentual) / 100
+    novoSalario = aumento + salario
+
+    return novoSalario
+
+def fatorialRecursivo(numero):
+    if(numero == 1 or numero == 0):
+        return 1
+    else:
+        return numero * fatorialRecursivo(numero - 1)
 
 
 def menu():
@@ -152,8 +214,13 @@ def menu():
     11. Menor valor de um vetor
     12. A média de um vetor
     13. Data por extenso
-    14. Inverspo de um número inteiro
-    22. Sair
+    14. O inverso de um número inteiro
+    15. O inverso de um nome
+    16. Quantas vogais há no nome?
+    17. Palavras embaralhadas
+    18. Gerar senha
+    19. Calcular novo salário
+    20. Fatorial Recursivo
 """)
     resultado = int(input("Qual opção deseja: "))
     return resultado

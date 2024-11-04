@@ -45,6 +45,40 @@ opcao = funcoes.menu()
 
 # Faça uma função que retorne o reverso de um número inteiro informado por parâmetro. Por exemplo: 127 retorna 721.
 
+# Faça uma função que recebe uma frase (ou palavra) por parâmetro e retorne essa frase invertida. Por exemplo: Rafael 
+# retorna leafaR
+
+# Faça uma função que recebe uma frase (ou palavra) por parâmetro e retorne quantas vogais essa frase tem. 
+# Por exemplo: se a frase for “Rafael” a função retorna 3
+
+#Construa uma função que receba uma string como parâmetro e retorne outra string com os caracteres embaralhados. 
+# Por exemplo: se a função receber a palavra “Python”, pode retornar “npthyo”, “ophtyn” ou qualquer outra combinação
+# possível, de forma aleatória. Padronize em sua função que todos os caracteres serão devolvidos em caixa alta ou 
+# caixa baixa, independentemente de como foram digitados.
+
+# Refaça o exercício anterior, porém sem repetir os caracteres. 
+# Exemplo: com a string “Python” não se pode ter como retorno “nhtohpy” com caracteres repetidos 
+# (a não ser que a palavra contenha caracteres repetidos, como Rafael).
+
+# Crie uma função para gerar senhas aleatórias com letras, números e caracteres especiais. 
+# A função deve receber o tamanho da senha (quantidade de caracteres) e retornar uma senha aleatória com esse 
+# tamanho podendo conter letras minúsculas, maiúsculas, números ou caracteres especiais (!@#$%&*()-+[{]}?). 
+# Por exemplo: se o tamanho for 8 a função deve retornar uma senha com 8 caracteres, como: a8B&Om1j.
+
+# Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo com o cargo, conforme a 
+# tabela abaixo. Faça um algoritmo que leia o salário e o cargo de um funcionário e calcule o novo salário.
+# O percentual de aumento deve ser consultado por meio de uma função que recebe por parâmetro o cargo e retorna 
+# o percentual de aumento.
+# Se o cargo do funcionário não estiver na tabela, ele deverá, então, receber só 5% de aumento. 
+# Por fim, mostre o salário antigo, o novo salário e a diferença. 
+# Cargo  Percentual
+# Gerente 10%
+# Engenheiro 20%
+# Técnico 30%
+
+# Crie uma função para calcular o fatorial, mas não utilize laço de repetição e sim recursividade (função chamando ela mesmo).
+
+
 
 
 if(opcao == 1):
@@ -130,3 +164,37 @@ elif(opcao == 14):
     numero = input("Digite uma sequência númerica: ")
     resultado = funcoes.inversoNumero(numero)
     print(resultado)
+
+elif(opcao == 15):
+    nome = input("Escreva seu nome: ")
+    resultado = funcoes.inversoNome(nome)
+    print(resultado)
+
+elif(opcao == 16):
+    nome = input("Escreva seu nome: ")
+    resultado = funcoes.contarVogais(nome)
+    print(f"Há {resultado} vogais.")
+
+elif(opcao == 17):
+    texto = input("Escreva uma palavra aleatória: ")
+    resultado = funcoes.embaralharPalavras(texto)
+    print(resultado)
+
+elif(opcao == 18):
+    tamanho = int(input("Defina o tamanho da senha: "))
+    resultado = funcoes.gerarSenha(tamanho)
+    print("Sua nova senha é:", resultado)
+
+elif(opcao == 19):
+    salarioAntigo = float(input("Digite o salário do funcionário: "))
+    cargo = input("Digite o cargo do funcionário: ").lower()
+    resultado = funcoes.calcularNovoSalario(salarioAntigo, cargo)
+    diferenca = resultado - salarioAntigo
+    print(f"Salário antigo: R$ {salarioAntigo:.2f}")
+    print(f"Novo salário: R$ {resultado:.2f}")
+    print(f"Diferença: R$ {diferenca:.2f}")
+
+elif(opcao == 20):
+    numero = int(input("Digite um número para calcular o fatorial: "))
+    resultado = funcoes.fatorialRecursivo(numero)
+    print(f"O fatorial de {numero} é {resultado}")
