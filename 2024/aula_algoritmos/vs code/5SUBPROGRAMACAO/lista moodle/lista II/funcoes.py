@@ -64,3 +64,68 @@ def calcularValorEstoque(codigos, quantidades, precos):
         index += 1
     
     return valorTotal[:index]
+
+"""Exercício 3: Análise de Temperaturas em Diferentes Cidades
+
+Contexto: Uma estação meteorológica registra as temperaturas médias diárias de diferentes cidades. 
+O analista quer saber quantos dias a temperatura foi superior a uma certa referência em cada cidade.
+
+Enunciado: Crie uma função dias_acima_referencia(temperaturas, referencia) que recebe duas listas:
+temperaturas: uma lista com as temperaturas médias diárias de uma cidade durante uma semana (7 dias).
+referencia: um número que representa a temperatura de referência.
+A função deve retornar o número de dias em que a temperatura foi superior à referência.
+
+Exemplo de uso:
+
+temperaturas = [30, 32, 35, 28, 33, 31, 30]
+referencia = 31
+print(dias_acima_referencia(temperaturas, referencia))
+
+# Saída esperada: 4
+"""
+
+def diasAcimaReferencia(temperaturas, referencia):
+    acimaReferencia = [0] * len(temperaturas)
+    index = 0
+
+    for i in range(0, len(temperaturas)):
+        if(temperaturas[i] >= referencia):
+            acimaReferencia[index] = temperaturas[i]
+            index += 1
+    
+    return len(acimaReferencia[:index])
+
+"""Exercício 4: Gestão de Salários de Funcionários
+
+Contexto: Uma empresa quer saber qual é o salário médio dos seus funcionários e identificar os funcionários que 
+ganham acima da média.
+
+Enunciado: Crie uma função salarios_acima_media(salarios, nomes) que recebe duas listas:
+salarios: uma lista com os salários dos funcionários.
+nomes: uma lista com os nomes dos funcionários.
+A função deve calcular a média dos salários e retornar uma lista com os nomes dos funcionários que ganham acima da média.
+
+Exemplo de uso:
+
+salarios = [3000, 2500, 5000, 4000, 3200]
+nomes = ["Carlos", "Maria", "Pedro", "Ana", "Luiza"]
+print(salarios_acima_media(salarios, nomes))
+
+# Saída esperada: ['Carlos', 'Pedro', 'Ana']
+"""
+def salariosAcimaMedia(salarios, nomes):
+    salariosAcimaMedia = [0.0] * len(salarios)
+    index = 0
+    soma = 0
+
+    for c in range(0, len(salarios)):
+        soma += salarios[c]
+    
+    mediaSalarial = soma / len(salarios)
+
+    for i in range(0, len(salarios)):
+        if(salarios[i] > mediaSalarial):
+            salariosAcimaMedia[index] = nomes[i]
+            index += 1
+    
+    return salariosAcimaMedia[:index]
