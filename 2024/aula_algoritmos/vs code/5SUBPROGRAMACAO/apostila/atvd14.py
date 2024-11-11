@@ -7,7 +7,6 @@
 def turma(totalAlunos, totalNotas, disciplina):
     notas = [0.0] * totalNotas
     alunos = [0] * totalAlunos
-   
     
     for c in range(0, len(alunos)):
         soma = 0
@@ -19,7 +18,7 @@ def turma(totalAlunos, totalNotas, disciplina):
             soma += notas[media]
             print(soma)
         mediaArit = soma / totalNotas
-        print(f"A média do(a) {alunos[c]} é {mediaArit}")           
+        print(f"A média do(a) {alunos[c]} é {mediaArit} na disciplina: {disciplina}")           
     
 totalNotas = int(input("Qual o total de notas: "))
 totalAlunos = int(input("Quantidade de alunos: "))

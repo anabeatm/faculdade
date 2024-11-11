@@ -129,3 +129,37 @@ def salariosAcimaMedia(salarios, nomes):
             index += 1
     
     return salariosAcimaMedia[:index]
+
+"""Exercício 5: Gestão de Vendas de um E-commerce
+
+Contexto: Um e-commerce deseja analisar o total de vendas por categoria de produto. Para isso, ele possui uma lista 
+com o valor de cada venda e outra lista com a categoria do produto vendido. O gerente quer calcular o total de vendas
+de cada categoria.
+
+Enunciado: Crie uma função total_vendas_por_categoria(vendas, categorias) que recebe duas listas:
+vendas: uma lista com os valores de vendas realizadas.
+categorias: uma lista com as categorias dos produtos vendidos.
+A função deve retornar um dicionário onde as chaves são as categorias e os valores são o total de vendas para cada categoria.
+
+Exemplo de uso:
+
+vendas = [150, 200, 350, 400, 250, 300]
+categorias = ["Eletrônicos", "Roupas", "Eletrônicos", "Móveis", "Roupas", "Eletrônicos"]
+print(total_vendas_por_categoria(vendas, categorias))
+
+# Saída esperada: {'Eletrônicos': 800, 'Roupas': 450, 'Móveis': 400}
+"""
+
+def totalVendasPorCategoria(vendas, categorias):
+    resultado = {}
+
+    for i in range(0, len(vendas)):
+        categoria = categorias[i]
+        valor = vendas[i]
+
+        if(categoria in resultado):
+            resultado[categoria] += valor
+        else:
+            resultado[categoria] = valor
+    
+    return resultado

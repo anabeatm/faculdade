@@ -28,11 +28,19 @@ tam = int(input("Tamanho vetor: "))
 # resultado = f.diasAcimaReferencia(temperaturas, referencia)
 # print(resultado, "dias acima da referência.")
 
-nomes = [""] * tam
-salarios = [0.0] * tam
-for i in range(0, tam):
-    nomes[i] = input(f"Coloque o nome do {i + 1}° funcionário: ")
-    salarios[i] = float(input(f"Coloque seu salário: R$ "))
+# nomes = [""] * tam
+# salarios = [0.0] * tam
+# for i in range(0, tam):
+#     nomes[i] = input(f"Coloque o nome do {i + 1}° funcionário: ")
+#     salarios[i] = float(input(f"Coloque seu salário: R$ "))
 
-resultado = f.salariosAcimaMedia(salarios, nomes)
-print("Os funcionários que recebem acima da média salarial são:", resultado)
+# resultado = f.salariosAcimaMedia(salarios, nomes)
+# print("Os funcionários que recebem acima da média salarial são:", resultado)
+
+vendas = [0.0] * tam
+categorias = [""] * tam
+for i in range(0, tam):
+    vendas[i] = float(input("R$: "))
+    categorias[i] = input("Categoria: ")
+resultado = f.totalVendasPorCategoria(vendas, categorias)
+print(resultado)
