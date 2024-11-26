@@ -73,14 +73,14 @@ def fatorial(numero):
 
 def maiorVetor(vetor):
     maiorVetor = vetor[0]
-    for i in range(0, len(vetor)):
+    for i in range(1, len(vetor)):
         if(vetor[i] > vetor[0]):
             maiorVetor = vetor[i]
     return maiorVetor
 
 def menorVetor(vetor):
     menorVetor = vetor[0]
-    for i in range(0, len(vetor)):
+    for i in range(1, len(vetor)):
         if(vetor[i] < vetor[0]):
             menorVetor = vetor[i]
     return menorVetor
