@@ -1,0 +1,13 @@
+@startuml Segundo Caso
+class Pessoa {
+    - nome : String
+    - cpf : String
+    - dataNascimento : Date
+    - profissao : String
+
+    + incluirPessoa()
+    + alterarPessoa()
+    + consultarPessoa()
+    + excluirPessoa()
+}
+@enduml

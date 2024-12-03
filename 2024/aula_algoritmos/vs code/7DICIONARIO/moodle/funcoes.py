@@ -1,12 +1,10 @@
 # 1 - Criar uma função que recebe por parâmetro um dicionário com os dados de uma nova venda e escreve no final do arquivo.
-def novaVenda(listaVendas):
+def novaVenda(venda):
     arquivoLoja = open("loja.csv", "a", encoding="UTF-8")
-    
-    for i in range(0, len(listaVendas)):
-        venda = listaVendas[i]
-        linha = venda["nomeCliente"] + "," + venda["dataVenda"] + "," + venda["qntdItensVendidos"] + "," + venda["valorTotal"] + "\n"
 
-        arquivoLoja.write(linha)
+    linha = venda["nomeCliente"] + "," + venda["dataVenda"] + "," + venda["qntdItensVendidos"] + "," + venda["valorTotal"] + "\n"
+
+    arquivoLoja.write(linha)
 
     arquivoLoja.close()
 
@@ -58,7 +56,7 @@ def qntdItensValorTotal(nomeCliente):
         dados = linha.split(",")
 
         if(nomeCliente in dados[0]):
-            qntdItensVendidos += float(dados[2])
+            qntdItensVendidos += int(dados[2])
             valorTotal += float(dados[3])
 
     vendasCliente = {}
@@ -68,7 +66,6 @@ def qntdItensValorTotal(nomeCliente):
     arquivoLoja.close()
 
     return vendasCliente
-
 
 # 4 - Criar uma função que recebe por parâmetro um mês e um ano e retorna um vetor de dicionários com todas as vendas desse período 
 # (pesquisar pelo número do mês e ano).
@@ -80,14 +77,10 @@ def vendasPorPeriodo(mes, ano):
     for linha in listaArquivo[1:]:
         linha = linha.strip()
         dados = linha.split(",")
-        if(len(dados) > 1):
-            data = dados[1]
-            dataSplit = data.split("-")
-            if(len(dataSplit) == 3):
-                mesVenda = dataSplit[1]
-                anoVenda = dataSplit[0]
-                if(mesVenda == mes and anoVenda == ano):
-                    tamanhoDoVetor += 1
+        data = dados[1].split("-")
+        # print(data)
+        if(mes == data[1] and ano == data[0]):
+            tamanhoDoVetor += 1
 
     vendasPeriodo = [""] * tamanhoDoVetor
 
@@ -95,19 +88,15 @@ def vendasPorPeriodo(mes, ano):
     for linha in listaArquivo[1:]:
         linha = linha.strip()
         dados = linha.split(",")
-        if(len(dados) > 1):
-            data = dados[1]
-            dataSplit = data.split("-")
-            if(len(dataSplit) == 3):
-                mesVenda = dataSplit[1]
-                anoVenda = dataSplit[0]
-                if(mesVenda == mes and anoVenda == ano):
-                    vendasPeriodo[indice] = {
-                        "nome": dados[0],
-                        "data": dados[1],
-                        "vendas": dados[2]
-                    }
-                    indice += 1
+        data = dados[1].split("-")
+        if(mes == data[1] and ano == data[0]):
+            vendasPeriodo[indice] = {
+                "nomeCliente": dados[0],
+                "dataVenda": dados[1],
+                "qntdItensVendidos": dados[2],
+                "valorTotal" : dados[3]
+            }
+            indice += 1
     
     arquivoLoja.close()
 
@@ -126,17 +115,10 @@ def qntdValorTotalPeriodo(mes, ano):
         linha = linha.strip()
         dados = linha.split(",")
 
-        if(len(dados) > 1):
-            data = dados[1]
-            dataSplit = data.split("-")
-
-            if(len(dataSplit) == 3):
-                mesVenda = dataSplit[1]
-                anoVenda = dataSplit[0]
-
-                if(mesVenda == mes and anoVenda == ano):
-                    qntdItens += float(dados[2])
-                    valorTotal += float(dados[3])
+        data = dados[1].split("-")
+        if(mes == data[1] and ano == data[0]):
+            qntdItens += int(dados[2])
+            valorTotal += float(dados[3])
     
     qntdValorTotal = {}
 
@@ -151,8 +133,6 @@ def qntdValorTotalPeriodo(mes, ano):
 # sejam exibidos adequadamente (for e não print(vetor)) na tela.
 
 def menuOpcoes():
-    # vendas = [""] * 100 # garantindo total de espaços, já que não saberei até quanto o usuário gostaria de adicionar vendas
-    # indice = 0
     while True:
         print("""--- Menu de Opções:
             1. Adicionar venda
@@ -162,24 +142,29 @@ def menuOpcoes():
             5. Quantidade e total de vendas de um período
             6. Sair
     """)
+        
         valor = int(input("Opção: "))
 
         if(valor == 1):
-            venda = [""]
+            while True:
+                venda = {}
+                venda["nomeCliente"] = input("Nome: ")
+                venda["dataVenda"] = input("Data (AAAA/MM/DD): ")
+                venda["qntdItensVendidos"] = input("Quantidade de itens vendidos: ")
+                venda["valorTotal"] = input("Valor total: ")
 
-            for i in range(0, len(venda)):
-                venda[i] = {}
-                venda[i]["nomeCliente"] = input("Nome: ")
-                venda[i]["dataVenda"] = input("Data (AAAA/MM/DD): ")
-                venda[i]["qntdItensVendidos"] = input("Quantidade de itens vendidos: ")
-                venda[i]["valorTotal"] = input("Valor total: ")
+                novaVenda(venda)
 
-            novaVenda(venda)
+                continuar = input("Deseja inserir mais? [S/N]: ").upper()
+                if(continuar != "S"):
+                    break
 
         if(valor == 2):
             nomeCliente = input("Nome do cliente: ")
             print("-" * 30)
+
             funcao = vendasCliente(nomeCliente)
+
             for i in range(0, len(funcao)):
                 print(f"Nome do cliente: {funcao[i]['nomeCliente']}")
                 print(f"Data da venda: {funcao[i]['dataVenda']}")
@@ -190,25 +175,31 @@ def menuOpcoes():
         if(valor == 3):
             nomeCliente = input("Nome do cliente: ")
             print("-" * 30)
+
             funcao = qntdItensValorTotal(nomeCliente)
+
             print(f"A quantidade de itens vendidos para {nomeCliente}: {funcao['qntdItensVendidos']}")
             print(f"O valor total para {nomeCliente}: R${funcao['valorTotal']:.2f}")
 
         if(valor == 4):
             mes = input("Mês: ")
             ano = input("Ano: ")
-            print("-" * 30)
-            funcao = vendasPorPeriodo(mes, ano)
             print(f"No mês {mes} de {ano}, tiveram as seguintes vendas:")
+            print("-" * 30)
+
+            funcao = vendasPorPeriodo(mes, ano)
+
             for i in range(0, len(funcao)):
-                print(f"Nome: {funcao[i]['nome']}\nData: {funcao[i]['data']}\nTotal de vendas: {funcao[i]['vendas']}")
+                print(f"Nome: {funcao[i]['nomeCliente']}\nData: {funcao[i]['dataVenda']}\nTotal de vendas: {funcao[i]['valorTotal']}")
                 print("-" * 30)
 
         if(valor == 5):
             mes = input("Mês: ")
             ano = input("Ano: ")
             print("-" * 30)
+
             funcao = qntdValorTotalPeriodo(mes, ano)
+
             print(f"Quantidade total no {mes} em {ano}: {funcao['qntdItensVendidos']}")
             print(f"Valor total: R${funcao['valorTotal']:.2f}")
         
