@@ -54,6 +54,7 @@ def vendasMes(mes):
 
     for i in range(0, len(listaArquivo)):
         linha = listaArquivo[i].split("-")
+
         for c in range(0, len(linha)):
             if(mes == linha[c]):
                 print(f"{linha[c - 1]} - {linha[c]} - {linha[c + 1]}")
@@ -86,7 +87,7 @@ def qntdEvalorTotalMes(mes):
     return retorno
 
 # 6 - Criar um menu principal com as opções acima
-def menuOpcoes():
+def menuOpcoes(valor):
     while True:
         print("""--- Menu de Opções:
             1. Adicionar venda
@@ -96,8 +97,6 @@ def menuOpcoes():
             5. Quantidade e total de vendas de um mês
             6. Sair
     """)
-        
-        valor = int(input("Opção: "))
 
         if(valor == 1):
             nome = input("Nome: ")

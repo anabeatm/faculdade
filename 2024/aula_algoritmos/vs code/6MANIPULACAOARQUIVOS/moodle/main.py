@@ -21,4 +21,5 @@ import funcoes as f
 # funcao = f.qntdEvalorTotalMes(procuraMes)
 # print(funcao)
 
-f.menuOpcoes()
+valor = int(input("Opção: "))
+f.menuOpcoes(valor)
