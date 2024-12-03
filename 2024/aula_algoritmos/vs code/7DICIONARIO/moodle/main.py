@@ -1,14 +1,14 @@
 import funcoes as f
 
-novaVenda = [""]
-for i in range(0, len(novaVenda)):
-    novaVenda[i] = {}
-    novaVenda[i]["nomeCliente"] = input("Nome: ")
-    novaVenda[i]["dataVenda"] = input("Data (AAAA/MM/DD): ")
-    novaVenda[i]["qntdItensVendidos"] = input("Quantidade de itens vendidos: ")
-    novaVenda[i]["valorTotal"] = input("Valor total: ")
+# novaVenda = [""]
+# for i in range(0, len(novaVenda)):
+#     novaVenda[i] = {}
+#     novaVenda[i]["nomeCliente"] = input("Nome: ")
+#     novaVenda[i]["dataVenda"] = input("Data (AAAA/MM/DD): ")
+#     novaVenda[i]["qntdItensVendidos"] = input("Quantidade de itens vendidos: ")
+#     novaVenda[i]["valorTotal"] = input("Valor total: ")
 
-f.novaVenda(novaVenda)
+# f.novaVenda(novaVenda)
 
 # nomeCliente = input("Nome do cliente: ")
 # funcao = f.qntdItensValorTotal(nomeCliente)
@@ -28,5 +28,5 @@ f.novaVenda(novaVenda)
 # print(f"Quantidade total no {mes} em {ano}: {funcao['qntdItensVendidos']}")
 # print(f"Valor total: R${funcao['valorTotal']:.2f}")
 
-# f.menuOpcoes()
+f.menuOpcoes()
 

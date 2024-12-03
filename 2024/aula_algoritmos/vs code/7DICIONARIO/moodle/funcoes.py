@@ -164,22 +164,17 @@ def menuOpcoes():
     """)
         valor = int(input("Opção: "))
 
-        # if(valor == 1):
-        #     if(indice >= len(vendas)):
-        #         print("Limites de vendas atingido!")
-        #         continue
+        if(valor == 1):
+            venda = [""]
 
-        #     venda = {}
-        #     venda["nomeCliente"] = input("Nome: ")
-        #     venda["dataVenda"] = input("Data (AAAA-MM-DD): ")
-        #     venda["qntdItensVendidos"] = int(input("Quantidade de Itens Vendidos: "))
-        #     venda["valorTotal"] = float(input("Valor Total: "))
-            
-        #     vendas[indice] = venda
-        #     indice += 1
+            for i in range(0, len(venda)):
+                venda[i] = {}
+                venda[i]["nomeCliente"] = input("Nome: ")
+                venda[i]["dataVenda"] = input("Data (AAAA/MM/DD): ")
+                venda[i]["qntdItensVendidos"] = input("Quantidade de itens vendidos: ")
+                venda[i]["valorTotal"] = input("Valor total: ")
 
-        #     novaVenda(vendas)
-        # ESTÁ DANDO ERRO
+            novaVenda(venda)
 
         if(valor == 2):
             nomeCliente = input("Nome do cliente: ")
