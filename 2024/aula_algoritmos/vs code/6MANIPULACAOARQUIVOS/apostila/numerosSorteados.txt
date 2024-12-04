@@ -1,0 +1,6 @@
+Quantidade números sorteados: 5
+96
+19
+18
+69
+38
