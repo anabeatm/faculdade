@@ -1,4 +1,4 @@
-# Implemente um programa que, ao ser executado, solicite ao usuário pelo nome de dois arquivos 
+# 1. Implemente um programa que, ao ser executado, solicite ao usuário pelo nome de dois arquivos 
 # que contenham textos. O programa deve comparar se os dois arquivos são iguais. 
 
 # arquivos = [""] * 2
@@ -19,7 +19,7 @@
 # else:
 #     print("Esses arquivos não são os mesmos.")
 
-# Implemente um programa que solicite ao usuário pelo nome de um arquivo. Apresente na tela 
+# 2. Implemente um programa que solicite ao usuário pelo nome de um arquivo. Apresente na tela 
 # quantas linhas existem neste arquivo.
 
 # arquivo = input("Escreva o nome do arquivo.txt: ")
@@ -31,7 +31,7 @@
 # linhasArquivo = len(lendoArquivo)
 # print(f"Seu arquivo tem {linhasArquivo} linhas.")
 
-#  Desenvolva  um  programa  que  solicite  faça  a  abertura  de  um  arquivo  e  faça  uma  cópia  do 
+# 3. Desenvolva  um  programa  que  solicite  faça  a  abertura  de  um  arquivo  e  faça  uma  cópia  do 
 # conteúdo deste arquivo para um novo arquivo.
 
 # def copiandoArquivo(nomeArquivo):
@@ -52,7 +52,7 @@
 # nomeArquivo = input("Escreva o nome do arquivo.txt: ")
 # copiandoArquivo(nomeArquivo)
 
-# Considere o seguinte requisito de software: Um sistema deve ser capaz de abrir um arquivo de 
+# 4. Considere o seguinte requisito de software: Um sistema deve ser capaz de abrir um arquivo de 
 # texto. O usuário deve informar um caractere e o sistema deve apresentar quantas vezes o caractere fornecido 
 # aparece no texto. Desenvolva um aplicativo que seja capaz de representar este requisito.
 
@@ -82,24 +82,81 @@
 
 # print(f"Há {retorno} do caractere {caractere}.")
 
-# Implemente um algoritmo que faça a leitura de um número N que representa quantos valores 
+# 5. Implemente um algoritmo que faça a leitura de um número N que representa quantos valores 
 # devem  ser  sorteados  aleatoriamente  (entre  0  e  100).  O  algoritmo  deve  sortear  os  N  números  aleatórios 
 # armazenando-os em um vetor. Por fim, os dados deste vetor devem ser salvos em um arquivo texto. Ao salvar 
 # o arquivo texto, a primeira linha do arquivo deve conter a quantidade de números sorteados.
-import random as r
 
-numeroN = int(input("Escreva quantas vezes haverá sorteio de 0 a 100: "))
-numerosSorteados = [0] * numeroN
+# import random as r
 
-for i in range(0, numeroN):
-    numerosSorteados[i] = r.randint(0, 100)
+# numeroN = int(input("Escreva quantas vezes haverá sorteio de 0 a 100: "))
+# numerosSorteados = [0] * numeroN
 
-arquivo = open("numerosSorteados.txt", "w", encoding="UTF-8")
+# for i in range(0, numeroN):
+#     numerosSorteados[i] = r.randint(0, 100)
 
-arquivo.write("Quantidade de números sorteados: " + str(numeroN) + "\n")
+# arquivo = open("numerosSorteados.txt", "w", encoding="UTF-8")
 
-for c in range(0, len(numerosSorteados)):
-    linha = numerosSorteados[c]
-    arquivo.write(str(linha) + "\n")
+# arquivo.write("Quantidade de números sorteados: " + str(numeroN) + "\n")
 
-arquivo.close()
+# for c in range(0, len(numerosSorteados)):
+#     linha = numerosSorteados[c]
+#     arquivo.write(str(linha) + "\n")
+
+# arquivo.close()
+
+# 6. Considere que um arquivo chamado exercício.txt esteja salvo no disco com o seguinte conteúdo: 
+# 8 
+# 20 
+# 30 
+# 50 
+# 17 
+# 28 
+# 47 
+# 14 
+# A primeira linha do arquivo (8) indica que existem 8 números a serem analisados (20, 30, 50, 1, 7, 28, 47, 14).
+ 
+# Implemente um algoritmo que contenha uma função chamada abrirArquivo(nome) que receba no parâmetro 
+# o nome do arquivo a ser aberto. 
+
+# Esta função deve ser capaz de abrir o arquivo e preencher um vetor com os valores indicados conforme descrição acima, 
+# retornando este vetor preenchido. 
+
+# Implemente uma função chamada obterMaior(vetor) que receba o vetor com os números lidos. Esta função 
+# deverá retornar o maior dos números contidos no vetor. 
+
+# No programa principal, solicite o nome do arquivo, obtenha o vetor com os dados e apresente o maior dos 
+# números deste vetor (chamando as respectivas funções criadas).
+
+# def abrirArquivo(nome):
+#     arquivo = open(nome, "r", encoding="UTF-8")
+#     linhasArquivo = arquivo.readlines()
+
+#     pulandoPrimeiraLinha = linhasArquivo[1:]
+
+#     vetorTXT = [0] * len(pulandoPrimeiraLinha)
+
+#     for i in range(0, len(pulandoPrimeiraLinha)):
+#         vetorTXT[i] = pulandoPrimeiraLinha[i].replace("\n", "")
+
+#     arquivo.close()
+
+#     return vetorTXT
+
+# def obterMaior(vetor):
+#     for c in range(0, len(vetor)):
+#         vetor[c] = int(vetor[c])
+
+#     maiorNum = vetor[0]
+
+#     for i in range(1, len(vetor)):
+#         if(vetor[i] > maiorNum):
+#             maiorNum = vetor[i]
+
+#     return maiorNum
+
+# nome = input("Nome do arquivo: ")
+# retorno = abrirArquivo(nome)
+# print(retorno)
+# maiorNum = obterMaior(retorno)
+# print(f"O maior número do vetor é {maiorNum}.")
