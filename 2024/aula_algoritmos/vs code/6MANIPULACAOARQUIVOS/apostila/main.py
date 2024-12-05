@@ -160,3 +160,21 @@
 # print(retorno)
 # maiorNum = obterMaior(retorno)
 # print(f"O maior número do vetor é {maiorNum}.")
+
+# 7. Considere que no disco exista um arquivo chamado prova.txt. Desenvolva um algoritmo que seja 
+# capaz de renomear este arquivo para que ele se chame exercício.txt.
+
+import os as o
+
+def renomeandoArquivos(nomeArquivo, novoNomeArquivo):
+    if(o.path.exists(nomeArquivo)):
+        o.rename(nomeArquivo, novoNomeArquivo)
+        print(f"O arquivo {nomeArquivo} foi renomeado para {novoNomeArquivo} com sucesso.")
+    else:
+        print("O arquivo que deseja renomear não existe.")
+
+nomeArquivo = input("Nome do arquivo: ")
+novoNomeArquivo = input("Renomear: ")
+
+renomeandoArquivos(nomeArquivo, novoNomeArquivo)
+
