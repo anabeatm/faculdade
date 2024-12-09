@@ -89,6 +89,7 @@ def vendasPorPeriodo(mes, ano):
         linha = linha.strip()
         dados = linha.split(",")
         data = dados[1].split("-")
+
         if(mes == data[1] and ano == data[0]):
             vendasPeriodo[indice] = {
                 "nomeCliente": dados[0],
@@ -96,6 +97,7 @@ def vendasPorPeriodo(mes, ano):
                 "qntdItensVendidos": dados[2],
                 "valorTotal" : dados[3]
             }
+            
             indice += 1
     
     arquivoLoja.close()
