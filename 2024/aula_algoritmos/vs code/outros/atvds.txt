@@ -1,0 +1,457 @@
+1 - Criar uma função para adicionar uma linha com os dados necessários no arquivo.
+
+def adicionarVenda(nome, data, qntd, valor):
+	arquivo = open("loja.csv", "a", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	novaLinha = nome + "," + data + "," + qntd + "," + valor + "/n"
+
+	arquivo.write(novaLinha)
+	arquivo.close()
+
+while(True):
+	nome = input("Nome: ")
+	data = input("Data [AAAA-MM-DD]: )
+	qntd = input("Quantidade de itens vendidos: ")
+	valor = input("Valor total: ")
+	
+	adicionarVenda(nome, data, qntd, valor)
+
+	continuar = input("Deseja inserir mais vendas? [S/N]: ).upper()
+	if(continuar != "S"):
+		break
+
+--------------------CORREÇÃO:--------------------------------
+
+def adicionarVenda(nome, data, qntd, valor):
+	arquivo = open("loja.csv", "a", encoding="UTF-8")
+
+	novaLinha = nome + "," + data + "," + qntd + "," + valor + "\n"
+
+	arquivo.write(novaLinha)
+	arquivo.close()
+
+while(True):
+	nome = input("Nome: ")
+	data = input("Data [AAAA-MM-DD]: ")
+	qntd = input("Quantidade de itens vendidos: ")
+	valor = input("Valor total: ")
+	
+	adicionarVenda(nome, data, qntd, valor)
+
+	continuar = input("Deseja inserir mais vendas? [S/N]: ").upper()
+	if(continuar != "S"):
+		break
+
+2 - Criar uma função que recebe por parâmetro o nome de um cliente e retorna um vetor de dicionários de vendas do cliente (pesquisar pelo nome ou parte dele).
+
+def vendasCliente(nome):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntdVendas = 0
+
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+
+		if(nome in dados[0]):
+			qntdVendas += 1
+
+	vendas = [""] * qntdVendas
+	indice = 0
+
+
+	for c in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[c].strip()
+		dados = linha.split(",")
+		
+		if(nome in dados[0]):
+			vendas[indice] = {}
+			vendas[indice]["nome"] = dados[0]
+			vendas[indice]["data"] = dados[1]
+			vendas[indice]["qntd"] = dados[2]
+			vendas[indice]["valor"] = dados[3]
+			indice += 1
+
+	arquivo.close()
+	return vendas
+
+
+nome = input("Nome do cliente: )
+vendas = vendasCliente(nome)
+for i in range(0, len(vendas)):
+	print(f"Nome: {vendas["nome"]}")
+	print(f"Data: {vendas["data"]}")
+	print(f"Quantidade de itens vendidos: {vendas["qntd"]}")
+	print(f"Valor Total: {vendas["valor"]}")
+
+--------------------CORREÇÃO:--------------------------------
+
+def vendasCliente(nome):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntdVendas = 0
+
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+
+		if(nome in dados[0]):
+			qntdVendas += 1
+
+	vendas = [""] * qntdVendas
+	indice = 0
+
+
+	for c in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[c].strip()
+		dados = linha.split(",")
+		
+		if(nome in dados[0]):
+			vendas[indice] = {}
+			vendas[indice]["nome"] = dados[0]
+			vendas[indice]["data"] = dados[1]
+			vendas[indice]["qntd"] = dados[2]
+			vendas[indice]["valor"] = dados[3]
+			indice += 1
+
+	arquivo.close()
+	return vendas
+
+nome = input("Nome do cliente: ")
+vendas = vendasCliente(nome)
+for i in range(0, len(vendas)):
+	print(f"Nome: {vendas[i]["nome"]}")
+	print(f"Data: {vendas[i]["data"]}")
+	print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+	print(f"Valor Total: {vendas[i]["valor"]}")
+	print("-" * 30)
+
+3 - Criar uma função para informar na tela a quantidade e o total de vendas de um cliente (pesquisar pelo nome ou parte dele).
+
+def qntdEValorCliente(nome):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntd = 0
+	valor = 0
+
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+
+		if(nome in dados[0]):
+			qntd += int(dados[2])
+			valor += float(dados[3])
+
+
+	arquivo.close()
+
+	print(f"Total de itens vendidos para {nome}: {qntd}" + " itens")
+	print(f"Valor total: R${valor:.2f}")
+
+
+
+
+nome = input("Nome do cliente: ")
+qntdEValorCliente(nome)
+
+4 - Criar uma função que recebe por parâmetro um mês e um ano e retorna um vetor de dicionários com todas as vendas desse período (pesquisar pelo número do mês e ano).
+
+def vendasPeriodo(mes, ano):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntdVendas = 0
+	
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+		
+		if(mês == data[1] and ano == data[0]):
+			qntdVendas += 1
+
+	vendas = [""] * qntdVendas
+	índice = 0
+
+	for c in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[c].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+
+		if(mes == data[1] and ano == data[0]):
+			vendas[indice] = {}
+			vendas[indice]["nome"] = dados[0]
+			vendas[indice]["data"] = dados[1]
+			vendas[indice]["qntd"] = dados[2]
+			vendas[indice]["valor"] = dados[3]
+			indice += 1
+
+	arquivo.close()
+
+	return vendas
+
+
+mes = input("Mês: ")
+ano = input("Ano: ")
+
+vendas = vendasPeriodo(mes, ano)
+
+for i in range(0, len(vendasPeriodo)):
+	print(f"Nome: {vendas[i]["nome"]}")
+	print(f"Data: {vendas[i]["data"]}")
+	print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+	print(f"Valor total: {vendas[i]["valor"]}")
+	print("-" * 30)
+
+--------------------CORREÇÃO:--------------------------------
+
+def vendasPeriodo(mes, ano):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntdVendas = 0
+	
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+		
+		if(mes == data[1] and ano == data[0]):
+			qntdVendas += 1
+
+	vendas = [""] * qntdVendas
+	indice = 0
+
+	for c in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[c].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+
+		if(mes == data[1] and ano == data[0]):
+			vendas[indice] = {}
+			vendas[indice]["nome"] = dados[0]
+			vendas[indice]["data"] = dados[1]
+			vendas[indice]["qntd"] = dados[2]
+			vendas[indice]["valor"] = dados[3]
+			indice += 1
+
+	arquivo.close()
+
+	return vendas
+
+
+mes = input("Mês: ")
+ano = input("Ano: ")
+
+vendas = vendasPeriodo(mes, ano)
+
+for i in range(0, len(vendas)):
+	print(f"Nome: {vendas[i]["nome"]}")
+	print(f"Data: {vendas[i]["data"]}")
+	print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+	print(f"Valor total: {vendas[i]["valor"]}")
+	print("-" * 30)
+
+5 - Criar uma função para informar a quantidade e o valor total de vendas de um mês específico (pesquisar pelo número do mês).
+
+def qntdEVendasPeriodo(mês, ano):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntd = 0
+	valor = 0
+	
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+
+		if(mês == data[1] and ano == data[0]):
+			qntd = int(dados[2])
+			valor = float(dados[3])
+
+
+	print(f"Quantidade de itens vendidos no período de {mes} - {ano}: {qntd}")
+	print("Valor total: {valor:.2f}")
+
+	arquivo.close()
+
+mês = input("Mês: ")
+ano = input("Ano: ")
+
+qntdEVendasPeriodo(mês, ano)
+
+
+--------------------CORREÇÃO:--------------------------------
+
+def qntdEVendasPeriodo(mes, ano):
+	arquivo = open("loja.csv", "r", encoding="UTF-8")
+	linhasArquivo = arquivo.readlines()
+
+	qntd = 0
+	valor = 0
+	
+	for i in range(1, len(linhasArquivo)):
+		linha = linhasArquivo[i].strip()
+		dados = linha.split(",")
+		data = dados[1].split("-")
+
+		if(mes == data[1] and ano == data[0]):
+			qntd += int(dados[2])
+			valor += float(dados[3])
+
+
+	print(f"Quantidade de itens vendidos no período de {mes}/{ano}: {qntd}")
+	print(f"Valor total: R${valor:.2f}")
+
+	arquivo.close()
+
+mes = input("Mês: ")
+ano = input("Ano: ")
+
+qntdEVendasPeriodo(mes, ano)
+
+6 - Criar um menu principal com as opções acima de modo que os dados obtidos por meio do retorno das funções sejam exibidos adequadamente (for e não print(vetor)) na tela.
+
+def naTelaMenu():
+	print("""--Menu de Opcões--
+	1. Adicionar nova venda
+	2. Vendas do cliente
+	3. Quantidade e valor total das vendas do cliente
+	4. Vendas em um período
+	5. Quantidade e valor total das vendas em um período
+	6. Sair
+""")
+
+naTelaMenu()
+opção = int(input("Selecione uma opção: "))
+
+def menuOpcoes(opção):
+	while(True):
+		if(opção == 1):
+			while(True):
+				nome = input("Nome: ")
+				data = input("Data [AAAA-MM-DD]: ")
+				qntd = input("Quantidade de itens vendidos: ")
+				valor = input("Valor total: ")
+	
+				adicionarVenda(nome, data, qntd, valor)
+
+				continuar = input("Deseja inserir mais vendas? [S/N]: ").upper()
+				if(continuar != "S"):
+					break
+
+		elif(opção == 2):
+			nome = input("Nome do cliente: ")
+			vendas = vendasCliente(nome)
+			for i in range(0, len(vendas)):
+				print(f"Nome: {vendas[i]["nome"]}")
+				print(f"Data: {vendas[i]["data"]}")
+				print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+				print(f"Valor Total: {vendas[i]["valor"]}")
+				print("-" * 30)
+
+		elif(opção == 3):
+			nome = input("Nome do cliente: ")
+			qntdEValorCliente(nome)
+		
+		elif(opção == 4):
+			mes = input("Mês: ")
+			ano = input("Ano: ")
+
+			vendas = vendasPeriodo(mes, ano)
+		
+			for i in range(0, len(vendas)):
+				print(f"Nome: {vendas[i]["nome"]}")
+				print(f"Data: {vendas[i]["data"]}")
+				print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+				print(f"Valor total: {vendas[i]["valor"]}")
+				print("-" * 30)
+
+		elif(opção == 5):
+			mes = input("Mês: ")
+			ano = input("Ano: ")
+
+			qntdEVendasPeriodo(mes, ano)
+
+
+		elif(opção == 6):
+			print("Saindo...")
+			break
+	else:
+		print("Opção Inválida. Tente novamente!")
+
+
+menuOpcoes(opção)
+
+
+--------------------CORREÇÃO:--------------------------------
+def naTelaMenu():
+	print("""--Menu de Opcões--
+	1. Adicionar nova venda
+	2. Vendas do cliente
+	3. Quantidade e valor total das vendas do cliente
+	4. Vendas em um período
+	5. Quantidade e valor total das vendas em um período
+	6. Sair
+""")
+
+def menuOpcoes(opcao):
+		if(opcao == 1):
+			while(True):
+				nome = input("Nome: ")
+				data = input("Data [AAAA-MM-DD]: ")
+				qntd = input("Quantidade de itens vendidos: ")
+				valor = input("Valor total: ")
+	
+				adicionarVenda(nome, data, qntd, valor)
+
+				continuar = input("Deseja inserir mais vendas? [S/N]: ").upper()
+				if(continuar != "S"):
+					break
+
+		elif(opcao == 2):
+			nome = input("Nome do cliente: ")
+			vendas = vendasCliente(nome)
+			for i in range(0, len(vendas)):
+				print(f"Nome: {vendas[i]["nome"]}")
+				print(f"Data: {vendas[i]["data"]}")
+				print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+				print(f"Valor Total: {vendas[i]["valor"]}")
+				print("-" * 30)
+
+		elif(opcao == 3):
+			nome = input("Nome do cliente: ")
+			qntdEValorCliente(nome)
+		
+		elif(opcao == 4):
+			mes = input("Mês: ")
+			ano = input("Ano: ")
+
+			vendas = vendasPeriodo(mes, ano)
+		
+			for i in range(0, len(vendas)):
+				print(f"Nome: {vendas[i]["nome"]}")
+				print(f"Data: {vendas[i]["data"]}")
+				print(f"Quantidade de itens vendidos: {vendas[i]["qntd"]}")
+				print(f"Valor total: {vendas[i]["valor"]}")
+				print("-" * 30)
+
+		elif(opcao == 5):
+			mes = input("Mês: ")
+			ano = input("Ano: ")
+
+			qntdEVendasPeriodo(mes, ano)
+
+while(True):
+	naTelaMenu()
+	opcao = int(input("Selecione uma opção: "))
+
+	if(opcao == 6):
+		break
+
+	menuOpcoes(opcao)
