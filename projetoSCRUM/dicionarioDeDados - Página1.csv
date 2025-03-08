@@ -1,0 +1,56 @@
+Tabelas,Campo,Nome do Campo,Tipo de Dado,PK,FK (tabela),Permite Nulos?,Descrição 
+projeto,projeto_id,Identificador da tabela,INT,TRUE,FALSE,Não,Chave Primária da tabela
+projeto,status_projeto_id,Identificador do status do projeto,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+projeto,nome_projeto,Nome do projeto,VARCHAR(200),FALSE,FALSE,Não,Nome próprio do projeto 
+projeto,descricao,Descrição,VARCHAR(500),FALSE,FALSE,Não,Descrição do projeto
+projeto,data_termino,Data que terminou,DATE,FALSE,FALSE,Não,Data do encerramento do projeto
+projeto,data_inicio,Data que iniciou,DATE,FALSE,FALSE,Não,Data do inicio do projeto
+projeto,objetivo,Objetivo,VARCHAR(100),FALSE,FALSE,Não,Objetivo do projeto
+projeto,escopo,Escopo,VARCHAR(100),FALSE,FALSE,Não,Escopo que foi criado para o projeto
+status_geral,status,Status,VARCHAR(500),,,Não,
+status_projeto,status_projeto_id,Identificador da tabela,INT,TRUE,FALSE,Não,Chave Primária da tabela
+status_projeto,status,Status,VARCHAR(50),FALSE,FALSE,Não,"Status do projeto, se está planejado, em andamento ou finalizado"
+status_sprints,status_sprints_id,Identificador da tabela status_sprints,INT,TRUE,FALSE,Não,Chave Primária da tabela
+projeto_sprint,projeto_sprint_id,Identificador da tabela, INT,TRUE,FALSE, Não,Chave Primária da tabela
+projeto_sprint,projeto_id, Identificador da tabela projeto, INT,FALSE,TRUE,Não, Chave Estrangeira da da tabela
+projeto_sprint,sprints_id, Identificador da tabela sprints, INT,FALSE,TRUE, Não, Chave Estrangeira da da tabela
+membros,membros_id,Identificador da tabela,INT,TRUE,FALSE, Não, Chave Primária da tabela
+membros,projeto_id, Identificador da tabela projeto, INT,FALSE,TRUE,Não, Chave Estrangeira da da tabela
+membros,funcionario_id, Identificador da tabela funcionario, INT,FALSE,TRUE, Não, Chave Estrangeira da da tabela
+membros,funcao_id, Identificador da tabela funcao,INT,FALSE,TRUE, Não, Chave Estrangeira da da tabela
+funcao,funcao_id, Identificador da tabela, INT,TRUE,FALSE,Não,Chave Primária da tabela
+funcao,descricao_funcao,Descrição da função,VARCHAR(100),FALSE,FALSE,Não,Descrição da função do funcionário no projeto
+funcao,esta_no_projeto,Está no projeto,BOOLEAN,FALSE,FALSE,Não,Verificar se o membro designado está no projeto (TRUE) ou não está no projeto (FALSE)
+sprints,sprints_id, Identificador da tabela, INT,TRUE,FALSE,Não,Chave Primária da tabela
+sprints,status_sprints_id,Identificador da tabela status_sprints,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+sprints,nome_sprints,Nome da sprint,VARCHAR(10),FALSE,FALSE,Não,Nome dada a sprint atual
+sprints,data_inicio_sprint,Data de inicio da sprint,DATE,FALSE,FALSE,Não,Data em que se iniciou a sprint
+sprints,data_termino_sprint,Data de término da sprint,DATE,FALSE,FALSE,Não,Data em que se encerrou a sprint
+status_sprints,situacao,Situação da sprint,VARCHAR(50),FALSE,FALSE,Não,"Situação da sprint, se ela está planejada, em andamento, cancelada..."
+task_sprint,status_geral_id,Identificador da tabela status_geral,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+funcionario,funcionario_id,Identificador da tabela funcionario,INT,TRUE,FALSE,Não,Chave Primária da tabela
+funcionario,nome,Nome,VARCHAR(200),FALSE,FALSE,Não,Nome do funcionário
+funcionario,email,Email,VARCHAR(100),FALSE,FALSE,Não,Email do funcionário
+funcionario,senha,Senha,CHAR(8),FALSE,FALSE,Não,Senha da conta do funcionário no sistema
+task_sprint,sprints_id,Identificador da tabela sprints,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+tasks,funcionario_id,Identificador da tabela funcionario,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+tasks,nome_task,Nome da task,VARCHAR(50),FALSE,FALSE,Não,Nome definida para a task
+tasks,descricao_task,Descrição da task,VARCHAR(500),FALSE,FALSE,Sim,"Descrição, caso necessária, da task "
+tasks,tamanho,Tamanho,INT,FALSE,FALSE,Não,Tamanho da task semelhante a sequência de Fibonacci
+tasks,tempo_estimado_task,Tempo estimado da task,INT,FALSE,FALSE,Não,"Tempo estimado para a task, 1H, 2H..."
+tasks,tempo_gasto,Tempo gasto,INT,FALSE,FALSE,Não,"Tempo real gasto na task, 1H, 2H..."
+relacionadoA,nome_task,Nome da task,VARCHAR(50),FALSE,FALSE,Não,Nome designado pra task
+situacao_task,situacao_tasks_id,Identificador da tabela situacao_tasks,INT,TRUE,,Não,Chave Primária da tabela
+situacao_task,situacao,Situação,VARCHAR(15),FALSE,FALSE,Não,"Situação atual da tarefa, se está planejada, em andamento, concluída"
+task_sprint,task_sprint_id,Identificador da tabela task_sprint,INT,TRUE,FALSE,Não,Chave Primária da tabela
+task_sprint,task_id,Identificador da tabela tasks,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+tasks,tasks_id,Identificador da tabela tasks,INT,TRUE,FALSE,Não,Chave Primária da tabela
+tasks,situacao_tasks_id,Identificador da tabela situacao_tasks,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+status_geral,status_geral_id,Identificador da tabela status_geral,INT,TRUE,FALSE,Não,Status geral da sprint
+relacao_task,relacao_task_id,Identificador da tabela relacao_task,INT,TRUE,FALSE,Não,Chave Primária da tabela
+relacao_task,relacionadoA_id,Identificador da tabela relacionadoA,INT,FALSE,TRUE,Sim,Chave Estrangeira da tabela
+relacao_task,tasks_id,Identificador da tabela tasks,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+relacao_task,situacao_tasks_id,Identificador da tabela situacao_tasks,INT,FALSE,TRUE,Não,Chave Estrangeira da tabela
+relacao_task,funcionario_id,Identificador da tabela funcionario,INT,FALSE,TRUE,Sim,Chave Estrangeira da tabela
+relacao_task,descricao,Descrição,VARCHAR(100),FALSE,FALSE,Sim,Descrição da relação entre a task e a quem está relacionado
+relacionadoA,relacionadoA_id,Identificador da tabela relacionadoA,INT,TRUE,FALSE,Não,Chave Primária da tabela

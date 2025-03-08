@@ -1,0 +1,251 @@
+﻿ENGENHARIA DE SOFTWARE  
+	DISCIPLINA: Algoritmos II
+	PROFESSOR(A): Frank Willian 
+	DATA: 07/03/2025
+	
+
+Exercícios para estudos e revisão de Algoritmos I e II
+
+
+1.  Conversão de Temperatura
+Problema: Converta uma temperatura de Celsius para Fahrenheit.
+Fórmula: F = C * 9/5 + 32
+Entrada: 25
+Saída: 77
+
+
+2. Média de Três Números
+Problema: Escreva um programa/método que receba três números e calcule a média aritmética deles.
+Entrada: 4 6 8
+Saída: 6
+
+
+3. Fatorial de um Número
+Problema: Calcule o número fatorial de um número.
+Entrada: 5
+Saída: 120
+
+
+4. Número Reverso
+Problema: Inverta a ordem dos dígitos de um número.
+Entrada: 1234
+Saída: 4321
+
+
+5. Palíndromo
+Problema: Verifique se uma palavra é um palíndromo.
+Entrada: radar
+Saída: Sim
+
+
+6. Soma dos Dígitos
+Problema: Calcule a soma dos dígitos de um número.
+Entrada: 123
+Saída: 6
+
+
+7. Ordenação de Três Números
+Problema: Ordene três números em ordem crescente.
+Entrada: 3 1 2
+Saída: 1 2 3
+
+
+8. Contagem de Vogais
+Problema: Conte o número de vogais em uma string sem utilizar a função length.
+Entrada: programacao
+Saída: 5
+
+
+9. Conversão de Base Decimal para Binário
+Problema: Converta um número decimal para binário.
+Entrada: 10
+Saída: 1010
+
+
+10.  Potência de Dois Números
+Problema: Calcule a potência de um número em relação a outro.
+Entrada: 2 3
+Saída: 8
+
+
+11.  Contagem de Palavras
+Problema: Conte o número de palavras em uma frase.
+Entrada: Olá mundo da programação
+Saída: 4
+
+
+12.  Média Geométrica
+Problema: Calcule a média geométrica de três números.
+Fórmula: M = (a * b * c)^(1/3)
+Entrada: 2 8 4
+Saída: 4
+
+
+13.  Maior de Três Números
+Problema: Determine o maior entre três números.
+Entrada: 5 7 3
+Saída: 7
+
+
+14.  Soma de Pares
+Problema: Calcule a soma de todos os números pares entre 1 e N (inclusive).
+Entrada: 10
+Saída: 30
+
+
+15.  Soma de Números em Intervalo
+Problema: Calcule a soma de todos os números em um intervalo [a, b].
+Entrada: 1 5
+Saída: 15
+
+
+16.  Multiplicação de Matrizes 2x2
+Problema: Multiplique duas matrizes 2x2.
+Entrada:
+1 2
+3 4
+
+
+5 6
+7 8
+
+
+Saída:
+19 22
+43 50
+
+
+17.  Transposição de Matrizes 3x3
+Problema: Transponha uma matriz 3x3.
+Entrada:
+1 2 3
+4 5 6
+7 8 9
+
+
+Saída:
+1 4 7
+2 5 8
+3 6 9
+
+
+18.  Conversão de Base Decimal para Hexadecimal
+Problema: Converta um número decimal para hexadecimal.
+Entrada: 255
+Saída: FF
+
+
+19.  Contagem de Consoantes
+Problema: Conte o número de consoantes em uma string.
+Entrada: programacao
+Saída: 6
+
+
+20.  Encontre o Segundo Maior Número
+Problema: Encontre o segundo maior número em um vetor.
+Entrada: [1, 5, 3, 9, 7]
+Saída: 7
+
+
+21.  Validação de CPF
+Problema: Valide se um CPF (formato: xxx.xxx.xxx-xx) é válido (https://www.macoratti.net/alg_cpf.htm).
+Entrada: 123.456.789-09
+Saída: Inválido
+
+
+22.  Calculadora Científica
+Problema: Implemente uma calculadora científica que suporte as operações básicas (+, -, *, /), além de seno, cosseno, tangente e logaritmo.
+Entrada: cos(0), 3 + 4
+Saída: 1, 7
+
+
+23.  Sistema de Notas
+Problema: Desenvolva um sistema que leia as notas de uma turma e calcule a média, a mediana e o desvio padrão.
+Entrada: [7, 8, 9, 6, 7, 8, 10, 5]
+Saída: Média: 7.5, Mediana: 7.5, Desvio Padrão: 1.58
+
+
+24.  Gerenciador de Tarefas
+Problema: Implemente um gerenciador de tarefas simples que permita adicionar, remover e listar tarefas.
+Entrada: Adicionar: "Estudar", Listar
+Saída: ["Estudar"]
+
+
+25.  Conversor de Moedas
+Problema: Crie um programa que converta valores entre diferentes moedas.
+Entrada: 10 USD para EUR
+Saída: 8.45 EUR (a saída pode variar dependendo da taxa de câmbio atual)
+
+
+26.  Simulador de Empréstimo
+Problema: Desenvolva um simulador de empréstimo que calcule o valor das parcelas mensais, os juros totais e o valor total pago.
+Entrada: Valor: 10000, Taxa: 1.5%, Meses: 12
+Saída: Parcela Mensal: 898.87, Juros Totais: 786.40, Valor Total: 10786.40
+
+
+27.  Analisador de Texto
+Problema: Crie um programa que leia um texto e retorne a contagem de palavras, a frequência de cada palavra e a palavra mais frequente.
+Entrada: O rato roeu a roupa do rei de Roma
+Saída: Contagem de Palavras: 8, Frequência: {"O": 1, "rato": 1, "roeu": 1, "a": 1, "roupa": 1, "do": 1, "rei": 1, "de": 1, "Roma": 1}, Palavra Mais Frequente: "O"
+
+
+28.  Sistema de Votação
+Problema: Desenvolva um sistema de votação que permita aos usuários votar em candidatos e exiba o resultado da eleição.
+Entrada: Votar: "Candidato A", Votar: "Candidato B", Votar: "Candidato A"
+Saída: Resultado: {"Candidato A": 2, "Candidato B": 1}
+
+
+29.  Agenda de Contatos
+Problema: Implemente uma agenda de contatos que permita adicionar, remover, buscar e listar contatos.
+Entrada: Adicionar: "Maria, 123456789", Buscar: "Maria"
+Saída: Maria: 123456789
+
+
+30.  Verificação de Palíndromos em Lista
+Problema: Verifique se cada palavra em uma lista é um palíndromo.
+Entrada: ["radar", "programacao", "arara"]
+Saída: ["Sim", "Não", "Sim"]
+
+
+31.  Gerador de Senhas
+Problema: Implemente um gerador de senhas que crie senhas aleatórias seguras com base em critérios fornecidos pelo usuário.
+Entrada: Comprimento: 12, Incluir Números: Sim, Incluir Símbolos: Sim
+Saída: Senha: "A1b2@c3d4#e5"
+
+
+32.  Analisando URLs
+Problema: dada uma URL, desenvolva um programa que indique se a URL é válida ou não e, caso seja válida, retorne as suas partes constituintes.
+Entrada: http://www.google.com/mail/user=fulano
+Saída:
+protocolo: http
+host: www
+domínio: google.com
+path: mail
+parâmetros: user=fulano
+Entrada: ssh://fulano%senha@git.com/
+Saída:
+protocolo: ssh
+usuário: fulano
+senha: senha
+dominio: git.com
+
+
+33.  Caixa Eletrônico
+Problema: Desenvolva um programa que simule a entrega de notas quando um cliente efetuar um saque em um caixa eletrônico. Os requisitos básicos são os seguintes:
+Entregar o menor número de notas;
+É possível sacar o valor solicitado com as notas disponíveis;
+Saldo do cliente infinito;
+Quantidade de notas infinito (pode-se colocar um valor finito de cédulas para aumentar a dificuldade do problema);
+Notas disponíveis de R$ 100,00; R$ 50,00; R$ 20,00 e R$ 10,00
+Entrada: R$ 30,00
+Saída: Resultado Esperado: Entregar 1 nota de R$ 20,00 e 1 nota de R$ 10,00.
+Entrada: R$ 80,00
+Saída: Resultado Esperado: Entregar 1 nota de R$ 50,00 1 nota de R$ 20,00 e 1 nota de R$ 10,00.
+
+
+34.  Cheque por Extenso
+Problema: Apesar de o volume de cheques emitidos tenha diminuído drásticamente nos últimos anos, principalmente devido a popularização dos cartões de crédito e débito, eles ainda são utilizados em muitas compras, especialmente a de valores altos. E para auxiliar no seu preenchimento, vários estabelecimentos possuem máquinas que dado o valor da compra, preenchem o cheque com o seu valor por extenso.
+Desenvolva um programa que dado um valor monetário, seja retornado o valor em reais por extenso.
+Entrada: 15415,16 - Saída: quinze mil quatrocentos e quinze reais e dezesseis centavos
+Entrada: 0,05 - Saída: cinco centavos
+Entrada: 2,25 - Saída: dois reais e vinte e cinco centavos
