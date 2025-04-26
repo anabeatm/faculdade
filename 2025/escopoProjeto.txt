@@ -1,0 +1,34 @@
+import java.util.Random;
+
+
+public class RetornoDePalavrasDesordenadas{
+	String[] palavrasAleatorias = {"arroz", "feijao", "calabreso", "daviBritto"};
+
+
+	String[] RandomizarPalavras(palavrasAleatorias) {
+		Random random = new Random();
+		int indice = random.nextInt(5);
+
+		return palavrasAleatorioas[indice];
+
+	}
+}
+
+public class CacaPalavraDescoberta {
+	RetornoDePalavrasDesordenadas palavraEscolhida; 
+}
+
+
+
+public CacaPalavraDescoberta() {
+	this.palavraEscolhida = new RetornoDePalavrasDesordenadas();
+}
+
+
+
+
+
+
+
+
+

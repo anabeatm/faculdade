@@ -1,0 +1,69 @@
+Problema 1: Gerenciador de Tarefas
+Você está desenvolvendo um aplicativo de tarefas para ajudar usuários a organizarem suas atividades diárias.
+Cada tarefa deve ter um título, uma descrição, uma data de vencimento e uma prioridade.
+Os usuários poderão marcar tarefas como concluídas ou excluí-las quando não forem mais necessárias.
+O sistema deve permitir visualizar, adicionar, remover e atualizar tarefas de forma simples.
+
+--> Tarefa: classe;
+--> Atributos: título: String, descrição: String, dataVencimento: Date e prioridade: Integer ou Boolean,
+status: Boolean ou String;
+-->             Opcional: dataTarefa: Date, dataAtualização = Date
+--> Ademais, usuario: Usuario (objeto usuario)
+
+--> Usuário: classe;
+--> Atributos: nome: String, email: String, senha: String
+
+
+Problema 2: Sistema de Votação Online
+Uma escola quer criar um sistema online para eleger o representante de turma.
+Cada aluno poderá votar uma única vez em um dos candidatos.
+O sistema deve registrar os votos, garantir que ninguém vote duas vezes e exibir o vencedor ao final da votação.
+A proposta é criar uma aplicação simples e segura para conduzir as eleições escolares.
+
+--> Candidatos: classe;
+        aluno: Alunos;
+        qntsVotos: Integer;
+        numeroCampanha: Integer;
+        dataInscrucao: Date;
+        ano: Integer;
+
+--> Representante de turma: classe;
+        nome: Alunos;
+        turma: String;
+        vencedor: Candidato;
+
+--> Alunos/Votantes: classe
+        nome: String;
+        ra: String;
+        jaVotou: Boolean;
+        aluno: Turma
+
+--> Curso: classe
+        tipo: String;
+
+--> Turma: classe
+    numeroAluno = Integer;
+    ano: Integer;
+    curso: Curso
+    alunos[]: Alunos
+
+Problema 3: Simulador de Corrida de Carros
+Um jogo de corrida está sendo desenvolvido e precisa simular o comportamento de diferentes carros durante uma prova.
+Cada carro tem um modelo e uma velocidade máxima. Durante a corrida, os carros devem ser capazes de acelerar, frear
+e mostrar seu status atual (como a velocidade no momento). O sistema deve representar essas ações de forma que
+os comportamentos possam ser testados e comparados.
+
+--> Carro: classe
+    modelo: String;
+    velocidadeMax = Integer;
+    valocidadeMomento = Integer;
+    posicao = Integer;
+
+   --> métodos
+    void acelerar() {}
+    void frear() {}
+    Integer status() {}
+
+
+--> Corrida: classe
+
