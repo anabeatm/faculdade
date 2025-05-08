@@ -14,7 +14,7 @@
 	
 	la $t3, array # i
 	
-	for: 
+	for: # somando todos os valores do vetor
 		beq $t0, $t1, saidaFor # ENQUANTO T0 NAO FOR IGUAL T1
 		
 		lw $t4, ($t3) # PEGANDO VALOR DENTRO DO INDICE DO VETOR
@@ -25,33 +25,34 @@
 		
 		j for # JUMP FOR
 	
-	saidaFor:
-		la $t3, array
+	saidaFor: # calculando a média
+		la $t3, array # i
 		
 		div $t5, $t2 # FAZENDO A DIVISÃO
 		mflo $s0 # MOVENDO DE LOWER PRA S0
 		
-		li $v0, 4
+		li $v0, 4 # imprime mensagem
 		la $a0, msgMedia
 		syscall
 		
 		li $v0, 1
 		move $a0, $s0 # IMPRIMINDO A MÉDIA
 		syscall
-		
-		li $t0, 0
-		li $t6, 0 # contador
+		# --------------------
+		la $t3, array # i
+		li $t0, 0 # cont
+		li $t6, 0 # armazena o valor
 		
 		whileIf:
-			beq $t0, $t1, saidaWhileIf
+			beq $t0, $t1, saidaWhileIf # enqt nao for igual
 			
-			lw $t4, ($t3)
+			lw $t4, ($t3) # pega valor em t3
 		
 			bgt $s0, $t4, contaAcima # ENQUANTO S0 FOR MAIOR QUE T4
 			j continuaAcima
 			
 			contaAcima: # METODO
-				addi $t6, $t6, 1 # cada incremento contará quantos elementos estão acima da média
+				addi $t6, $t6, 1 # cada incremento contará quantos elementos estão abaixo da média
 				
 			continuaAcima: # METODO
 				addi $t3, $t3, 4
@@ -59,10 +60,10 @@
 				j whileIf
 			
 		saidaWhileIf:
-			la $t3, array
+			la $t3, array # i
 			
-			li $t0, 0
-			li $t7, 0 # contador
+			li $t0, 0 # cont
+			li $t7, 0 # armazena o valor
 			
 			whileIf2:
 				beq $t0, $t1, saidaTotal
@@ -73,7 +74,7 @@
 				j continuaAbaixo
 				
 				contaAbaixo:
-					addi $t7, $t7, 1 # cada incremento contará quantos elementos estão abixo da média
+					addi $t7, $t7, 1 # cada incremento contará quantos elementos estão acima da média
 				
 				continuaAbaixo:
 					addi $t3, $t3, 4

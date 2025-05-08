@@ -12,7 +12,7 @@
 
 .text
 	main:
-		li $t0, 0 # indice
+		li $t0, 0 # cont
 		
 		li $t1, 16 # tamanho dos vetores
 		
@@ -36,26 +36,26 @@
 			addi $t3, $t3, 4
 			addi $t4, $t4, 4
 
-			addi $t0, $t0, 4 # i++
+			addi $t0, $t0, 4 # cont++
 
 			j for # jump for
 		
 		saida:
-			li $t0, 0 # indice
+			li $t0, 0 # i
 			
 			while: # imprimindo os valores do vetor
-				beq $t0, $t1, saiDaImpressao
+				beq $t0, $t1, saiDaImpressao # enqt nao for igual
 				
-				li $v0, 1
+				li $v0, 1 # imprime o número
 				
-				lw $a0, array3($t0)
+				lw $a0, array3($t0) # acessa o número que sera impresso na array
 				syscall
 				
 				li $v0, 4 # imprime espaço em branco
 				la $a0, espaco
 				syscall
 
-				addi $t0, $t0, 4
+				addi $t0, $t0, 4 # i++
 
 				j while
 			

@@ -1,58 +1,37 @@
 @startuml
 left to right direction
-skinparam packageStyle rectangle
+skinparam actorPosition top
+skinparam actorStyle awesome
 
 actor Administrador as A
 actor Usuario as U
 
-package "Sistema de Gestão de Itens do Campus" {
+rectangle "Sistema de Controle de Empréstimo de Materiais do Campus" {
   
-  package "Gestão de Empréstimos" {
-    usecase "Gerenciar Empréstimos" as GE
-    usecase "Cadastrar Empréstimo" as CE3
-    usecase "Relacionar Material" as RE1
-    usecase "Relacionar Usuário" as RE2
-  }
+  usecase "Cadastrar Empréstimo" as CE1
+  usecase "Cadastrar entrada de Material" as CE2
+  usecase "Cadastrar saida de Material" as CE3
+  usecase "Cadastrar Usuário" as CE4
+  usecase "Socilitar um Empréstimo" as CE5
+  usecase "Cadastrar Administrador" as CE6
+  usecase "Verificar Disponibilidade do Material" as CE7
+  usecase "Cadastrar Objeto Achado" as CO1
+  usecase "Cadastrar Saida do Objeto" as CO2
+  
 
-  package "Gestão de Materiais" {
-    usecase "Cadastrar Material" as CE2
-  }
-
-  package "Gestão de Usuários" {
-    usecase "Cadastrar Usuário" as CE4
-  }
-
-  package "Gestão Administrativa" {
-    usecase "Cadastrar Administrador" as CE1
-  }
-
-  package "Achados e Perdidos" {
-    usecase "Cadastrar Objeto Achado" as CO1
-  }
-
-  package "Controle de Chaves" {
-    usecase "Cadastrar Sala" as CS1
-    usecase "Cadastrar Chave" as CS2
-    usecase "Relacionar Chave à Sala" as RE3
-  }
-
-
-  A --> GE
-  A --> CE2
-  A --> CE4
   A --> CE1
+  A --> CE2
+  A --> CE3
+  A --> CE4
   A --> CO1
-  A --> CS1
-  A --> CS2
-  A --> RE3
+  A --> CO2
 
-  U --> CE3 : Solicita
+  
+  U --> CE5
 
-
-  GE --> CE3 : <<include>>
-  CE3 --> RE2 : <<include>>
-  CE3 --> RE1 : <<include>>
-  CE3 --> CE4 : <<extend>>
+  CE1 .-> CE5 : <<include>>
+  CE5 .-> CE7 : <<include>>
+  CE5 .-> CE4 : <<extend>>
 }
 
 @enduml

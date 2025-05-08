@@ -114,65 +114,30 @@ public class Main {
     }
 
 //          SAÍDA
-    public static void main(String[] args) {
-        // System.out.println(conversaoTemperatura(25));
-        // System.out.println(mediaAritmetica(4, 6, 8));
-        // System.out.println(fatorial(5));
-        Scanner scanner = new Scanner(System.in);
+public static void main(String[] args) {
+    double[] vetor = {3.3, 76.4, 12.2, 9.8, 23.5, 54.1};
 
-        int numeroDecimal = scanner.nextInt();
-        String binario = convertendoBinario(numeroDecimal);
-        System.out.println(numeroDecimal + " em binário é: " + binario);
-
-//        System.out.println("Escreva uma frase: ");
-//        String frase = scanner.nextLine();
-//        contantoVogais(frase);
-
-    //     System.out.print("Quantos números você deseja inserir? ");
-    //     int tamanho = scanner.nextInt();
-
-    //     int[] numeros = new int[tamanho];
-    //     for (int i = 0; i < tamanho; i++) {
-    //         System.out.print("Insira o número " + (i + 1) + ": ");
-    //         numeros[i] = scanner.nextInt();
-    //     }
-
-    //     scanner.close();
-
-    //     System.out.println(invertendoOrdem(numeros));
-    // }
-
-//        System.out.println("Quantos números deseja inserir? ");
-//        int tamanho = scanner.nextInt();
-//
-//        int[] vetorNumerico = new int[tamanho];
-//        for(int i = 0; i < tamanho; i++) {
-//            System.out.println("Insira um número: ");
-//            vetorNumerico[i] = scanner.nextInt();
-//        }
-//        System.out.println("A ordem crescente desses números é: " + ordemCrescente(vetorNumerico));
-
-
-
-    // System.out.println("Digite uma palavra: ");
-    // String palavra = scanner.nextLine();
-
-
-    // palavra = palavra.replaceAll("\\s+", "").toLowerCase();
-
-    // if(palindromo(palavra)) {
-    //     System.out.println("A palavra \"" + palavra + "\" é um palíndromo.");
-    // } else {
-    //     System.out.println("A palavra \"" + palavra + "\" não é um palíndromo.");
-    // }
-
-    // scanner.close();
-    // }
-
-    // System.out.println("Digite um número qualquer: ");
-    // String input = scanner.nextLine();
-    //  System.out.println("A soma dos dígitos é: " + soma(input));
-
-    scanner.close();
+    for (int i = 0; i < vetor.length; i++) {
+        System.out.print(vetor[i] + " \n");
+    }
+    ordenandoVetor(vetor);
+    System.out.println("----------ORDENADO------------");
+    for (int i = 0; i < vetor.length; i++) {
+        System.out.print(vetor[i] + " \n");
     }
 }
+
+    public static void ordenandoVetor(double[] vetor) {
+        for (int i = 0; i < vetor.length; i++) {
+            double chave = vetor[i];
+            int j = i - 1;
+
+            while (j >= 0 && vetor[j] > chave) {
+                vetor[j + 1] = vetor[j];
+                j -= 1;
+            }
+            vetor[j + 1] = chave;
+        }
+    }
+}
+

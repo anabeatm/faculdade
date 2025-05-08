@@ -12,11 +12,12 @@
 	
 	li $v0, 5 # le o número que foi fornecido
 	syscall
-	move $t0, $v0 # move ele para t0
 	
-	move $t1, $zero # cria indice
+	move $t0, $v0 # move v0 para t0
 	
-	move $t2, $zero # cria registrador que guardará a soma
+	li $t1, 0 # cria indice
+	
+	li $t2, 0 # cria registrador que guardará a soma
 	
 	for: 
 		bgt $t1, $t0, saida # enquanto t1 < t0

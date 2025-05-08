@@ -1,5 +1,0 @@
---> classificador: série de cálculos matemáticos para tentar adivinhar uma resposta futura. aprender sua tendencia.
---> regressão: quase mesma coisa que o classificador, porém utiliza u nº real ou nº contínuo.
-
-https://dontpad.com/mlifpr
-
