@@ -1,60 +1,77 @@
 @startuml
-
 skinparam classAttributeIconSize 0
 
-
 class Administrador {
-  - email: String
-  - senha: String
-  - nome: String
+  - id: int
+  - nome: string
+  - email: string
+  - senha: string
+  + autenticar(): boolean
+  + cadastrarMaterial()
+  + registrarEmprestimo()
+  + registrarEntradaSaida()
+  + cadastrarObjetoAchado()
+  + registrarRetiradaObjeto()
 }
-
 
 class Usuario {
-  - id: String
-  - nome: String
-  - email: String
+  - id: int
+  - nome: string
+  - email: string
+  + solicitarEmprestimo()
+  + retirarObjeto()
 }
-
 
 class Material {
-  - numeroPatrimonio: String
-  - nome: String
-  - tipo: String
-  - local: String
+  - id: int
+  - nome: string
+  - tipo: string
   - dataEntrada: Date
+  + registrarEntrada()
+  + registrarSaida()
 }
-
 
 class Emprestimo {
-  - dataSaida: Date
-  - dataDevolucao: Date
+  - id: int
+  - dataEmprestimo: Date
+  - material: Material
+  - usuario: Usuario
+  + registrar()
 }
-
-
-Usuario "1" -- "0..*" Emprestimo : realiza
-Emprestimo "1" -- "1" Material : refere-se
-
 
 class ObjetoAchado {
-  - nome: String
-  - local: String
+  - id: int
+  - descricao: string
+  - dataAchado: Date
+  - local: string
+  + registrar()
+}
+
+class RetiradaObjeto {
+  - id: int
+  - dataRetirada: Date
+  - objeto: ObjetoAchado
+  - responsavel: Usuario
+  + registrar()
+}
+
+class RegistroMovimentacao {
+  - id: int
   - data: Date
+  - tipo: string <<entrada|saida>>
+  - item: string
+  + registrar()
 }
 
+Administrador "1" --> "*" Material : cadastra >
+Administrador "1" --> "*" ObjetoAchado : cadastra >
+Administrador "1" --> "*" Emprestimo : registra >
+Administrador "1" --> "*" RegistroMovimentacao : controla >
 
-class Sala {
-  - bloco: String
-  - numeroSala: String
-}
+Usuario "1" --> "*" Emprestimo : solicita >
+Usuario "1" --> "*" RetiradaObjeto : retira >
 
-
-class Chave {
-  - bloco: String
-  - numeroSala: String
-}
-
-
-Chave "1" -- "1" Sala : pertence
+Material "1" --> "*" Emprestimo : é emprestado >
+ObjetoAchado "1" --> "1" RetiradaObjeto : pode ser retirado por >
 
 @enduml

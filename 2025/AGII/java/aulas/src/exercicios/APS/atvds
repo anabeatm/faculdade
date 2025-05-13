@@ -1,0 +1,25 @@
+1. Dada a sequência de números: [3, 4, 9, 2, 5, 8, 2, 1, 7], ordene-a em ordem não decrescente segundo os
+seguintes algoritmos, apresentando a sequência obtida após cada passo do algoritmo:
+   a) Bubble Sort;
+   public class BubbleSort {
+    private int[] vetor;
+    // getters e setters
+    // construtores
+    public void ordenacaoBubble() {
+        for(int i = 0; i < vetor.length - 1; i++) {
+            for(int j = 0; j < vetor.length - 1; j++) {
+                if(vetor[j] > vetor[j + 1]) {
+                    int temp = vetor[j];
+                    vetor[j] = vetor[j + 1];
+                    vetor[j + 1] = temp;
+                }
+            }
+        }
+    }
+   }
+   b) Selection Sort;
+   public class SelectionSort {}
+   c) Insertion Sort;
+   public class InsertionSort {}
+   d) Merge Sort;
+   public class MergeSort {}

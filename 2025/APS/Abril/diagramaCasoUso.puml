@@ -1,37 +1,35 @@
 @startuml
 left to right direction
-skinparam actorPosition top
-skinparam actorStyle awesome
+actor Administrador
+actor "Usuário" as Usuario
 
-actor Administrador as A
-actor Usuario as U
-
-rectangle "Sistema de Controle de Empréstimo de Materiais do Campus" {
-  
-  usecase "Cadastrar Empréstimo" as CE1
-  usecase "Cadastrar entrada de Material" as CE2
-  usecase "Cadastrar saida de Material" as CE3
-  usecase "Cadastrar Usuário" as CE4
-  usecase "Socilitar um Empréstimo" as CE5
-  usecase "Cadastrar Administrador" as CE6
-  usecase "Verificar Disponibilidade do Material" as CE7
-  usecase "Cadastrar Objeto Achado" as CO1
-  usecase "Cadastrar Saida do Objeto" as CO2
-  
-
-  A --> CE1
-  A --> CE2
-  A --> CE3
-  A --> CE4
-  A --> CO1
-  A --> CO2
-
-  
-  U --> CE5
-
-  CE1 .-> CE5 : <<include>>
-  CE5 .-> CE7 : <<include>>
-  CE5 .-> CE4 : <<extend>>
+rectangle "Sistema de Controle de Materiais" {
+    usecase "Cadastrar Administrador" as UC1
+    usecase "Cadastrar Material de Uso Coletivo" as UC2
+    usecase "Registrar Empréstimo de Material" as UC3
+    usecase "Controlar Entrada/Saída de Materiais" as UC4
+    usecase "Cadastrar Objeto Achado" as UC5
+    usecase "Registrar Retirada de Objeto Achado" as UC6
+    usecase "Controlar Entrada/Saída de Objetos Achados" as UC7
+    usecase "Autenticar Administrador" as UC8
 }
+
+Administrador --> UC1
+Administrador --> UC2
+Administrador --> UC3
+Administrador --> UC4
+Administrador --> UC5
+Administrador --> UC7
+Administrador --> UC8
+Administrador --> UC6
+
+Usuario --> UC3 : solicita
+Usuario --> UC6 : retira
+
+UC4 .-> UC3 : <<include>>
+UC3 .-> UC2 : <<include>>
+
+UC7 .-> UC6 : <<include>>
+UC6 .-> UC5 : <<include>>
 
 @enduml
