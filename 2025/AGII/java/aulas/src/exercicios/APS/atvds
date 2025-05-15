@@ -16,10 +16,95 @@ seguintes algoritmos, apresentando a sequência obtida após cada passo do algor
             }
         }
     }
-   }
+}
    b) Selection Sort;
-   public class SelectionSort {}
+   public class SelectionSort {
+    private int[] vetor;
+    // getters e setters
+    // construtores
+    public void ordenacaoSelection() {
+        for(int i = 0; i < vetor.length - 1; i++) {
+            int iMenor = i;
+            for(int j = i + 1; j < vetor.length; j++) {
+                if(vetor[j] < vetor[iMenor]) {
+                    iMenor = j;
+                }
+            }
+            int temp = vetor[iMenor];
+            vetor[iMenor] = vetor[i];
+            vetor[i] = tem;
+        }
+    }
+ }
    c) Insertion Sort;
-   public class InsertionSort {}
+   public class InsertionSort {
+    private int[] vetor;
+    // getters e setters
+    // construtores
+
+        public void ordenacaoInsertion() {
+            for(int i = 0; i < vetor.length; i++) {
+                int key = vetor[i];
+                int j = i - 1;
+                while(j >= 0 && vetor[j] > key) {
+                    vetor[j + 1] = vetor[j];
+                    j -= 1;
+                }
+                vetor[j + 1] = key;
+            }
+        }
+   }
    d) Merge Sort;
-   public class MergeSort {}
+   public class MergeSort {
+    private int[] vetor;
+    // getters e setters
+    // construtores
+
+    public void mergeSort(int inicio, int fim) {
+        if(inicio < fim) {
+            int meio = (inicio + fim) / 2;
+            mergeSort(inicio, fim);
+            mergeSort(meio + 1, fim);
+            intercalar(inicio, meio, fim);
+        }
+    }
+
+    private void intercalar(int inicio, int meio, int fim) {
+        for(int i = inicio; i <= fim; i++) {
+            temp[i] = vetor[i];
+        }
+        int esquerda = inicio;
+        int direita = meio + 1;
+
+        for(int i = inicio; i <= fim; i++) {
+            if(esquerda > meio) {vetor[i] = temp[direita++];}
+            else if(direita > fim) {vetor[i] = temp[esquerda++];}
+            else if(temp[esquerda] < temp[direita]) {vetor[i] = temp[esquerda++];}
+            else {vetor[i] = temp[direita++];}
+        }
+    }
+}
+2. Modifique o algoritmo de ordenação para ordenar um vetor de números inteiros em ordem decrescente.
+   Entrada: [3, 0, -2, 5, 8]
+   Saída: [8, 5, 3, 0, -2]
+
+   public class SelectionSort {
+    private int[] vetor;
+    // getters & setters
+    // construtores
+    public void ordenacaoCrescente() {
+        for(int i = 0; i < vetor.length - 1; i++) {
+            int iMenor = i;
+            for(int j = i + 1; j < vetor.length; j++) {
+                if(vetor[j] > vetor[iMenor]) {
+                    iMenor = j;
+                }
+            }
+            int temp = vetor[iMenor];
+            vetor[iMenor] = vetor[i];
+            vetor[i] = temp;
+        }
+    }
+   }
+
+
