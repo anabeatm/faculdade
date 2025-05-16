@@ -22,17 +22,19 @@ public class SelectionSort {
     }
 
     private void ordenandoVetor() {
+        // Enquanto i for menor que o tamanho do vetor - 1
         for (int i = 0; i < vetor.length - 1; i++) {
-            int iMenor = i;
-            for (int j = i + 1; j < vetor.length; j++) {
-                if(vetor[j] < vetor[iMenor]) {
-                    iMenor = j;
+            int iMenor = i; // inicia uma variável iMenor com o valor sendo o índice i
+            for (int j = i + 1; j < vetor.length; j++) { // enquanto j for o próximo número (i + 1)
+                // e j for menor que o tamanho do vetor
+                if(vetor[j] < vetor[iMenor]) { // ent, se vetor em j for menor que vetor em iMenor
+                    iMenor = j; // iMenor se torna o valor j
                 }
             }
-
-            int temp = vetor[iMenor];
-            vetor[iMenor] = vetor[i];
-            vetor[i] = temp;
+            // aí fora do segundo for
+            int temp = vetor[iMenor]; // cria uma variável auxiliar/temporária, onde receberá valor em iMenor
+            vetor[iMenor] = vetor[i]; // o valor em iMenor se torna o valor em i
+            vetor[i] = temp; // e por último, valor em i se torna o valor em temp
         }
     }
 

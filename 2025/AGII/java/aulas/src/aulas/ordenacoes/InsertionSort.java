@@ -21,15 +21,17 @@ public class InsertionSort {
     }
 
     private void ordenandoVetor() {
+        // enquanto i for menor que o tamanho do vetor
         for (int i = 0; i < vetor.length; i++) {
-            int carta = vetor[i];
-            int j = i - 1;
+            int carta = vetor[i]; // cria uma variável que recebe o valor do vetor em i
+            int j = i - 1; // e cria uma variável que recebe o valor de i - 1
 
-            while(j >= 0 && vetor[j] > carta) {
-                vetor[j + 1] = vetor[j];
-                j -= 1;
+            while(j >= 0 && vetor[j] > carta) { // enquanto j for maior ou igual a 0 e...
+                // vetor em j for maior que a variável de vetor em i
+                vetor[j + 1] = vetor[j]; // o próximo valor (j + 1) recebe o valor de vetor em j
+                j -= 1; // aí diminui o j em 1
             }
-            vetor[j + 1] = carta;
+            vetor[j + 1] = carta; // fora do while, o vetor em j + 1 recebe o valor da variável de vetor em i
         }
     }
 

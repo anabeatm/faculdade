@@ -20,16 +20,16 @@ public class BubbleSort {
     }
 
     private void ordernandoVetor() {
-//        Ciclo
+//      enquanto i for menor que o tamanho do vetor - 1
         for (int i = 0; i < vetor.length - 1; i++) {
-//            Ordenação
+//            e enquanto j também for menor que o tamanho do vetor - 1
             for (int j = 0; j < vetor.length - 1 ; j++) {
-                // Se vetor na posição j for maior que o próximo (j + 1)
+                // e se o vetor na posição j for maior que o próximo valor (j + 1)
                 if(vetor[j] > vetor[j + 1]) {
-                    // Swap
-                    int aux = vetor[j];
-                    vetor[j] = vetor[j + 1];
-                    vetor[j + 1] = aux;
+                    // cria uma variável auxiliar onde...
+                    int aux = vetor[j]; // ...aux recebe o valor do vetor na posição j
+                    vetor[j] = vetor[j + 1]; // vetor em j recebe o valor de j + 1
+                    vetor[j + 1] = aux; // e por último, vetor em j + 1 recebe a variável auxiliar
                 }
             }
         }
