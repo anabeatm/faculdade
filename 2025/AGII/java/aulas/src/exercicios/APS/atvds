@@ -160,29 +160,458 @@ O programa deve receber a entrada fornecida pelo usuário.
     }
 
 5. Implemente o algoritmo de ordenação para ordenar as linhas de uma matriz 2D.
-...
+public class OrdenarMatriz {
+
+    public static void main(String[] args) {
+        int[][] matriz = {
+            {5, 3, 8, 1},
+            {9, 4, 2, 7},
+            {6, 0, 3, 5}
+        };
+
+        System.out.println("Matriz original:");
+        imprimirMatriz(matriz);
+
+        for (int i = 0; i < matriz.length; i++) {
+            ordenarLinha(matriz[i]);
+        }
+
+        System.out.println("\nMatriz com linhas ordenadas:");
+        imprimirMatriz(matriz);
+    }
+    public static void ordenarLinha(int[] linha) {
+            int n = linha.length;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (linha[j] > linha[j + 1]) {
+                        // Troca os elementos
+                        int temp = linha[j];
+                        linha[j] = linha[j + 1];
+                        linha[j + 1] = temp;
+                    }
+                }
+            }
+        }
+}
 6. Implemente um programa que leia as notas dos alunos e as ordene em ordem crescente usando o algoritmo de ordenação.
 O programa deve então exibir a lista ordenada e calcular a mediana das notas. Você deve utilizar métodos
 já implementados anteriormente.
 
-    private double[] ordenandoNotas(double[] vetor) {
-        for(int i = 1; i < vetor.length; i++) {
+   public class ClassificacaoNotas {
+
+       public static void main(String[] args) {
+           int[] notas = {85, 70, 95, 60, 75, 80};
+
+           ordenarNotas(notas);
+           imprimirNotas(notas);
+
+           double mediana = calcularMediana(notas);
+           System.out.println("Mediana: " + mediana);
+       }
+
+      public static void ordenarNotas(int[] notas) {
+          int n = notas.length;
+          for (int i = 0; i < n - 1; i++) {
+              for (int j = 0; j < n - i - 1; j++) {
+                  if (notas[j] > notas[j + 1]) {
+                      int temp = notas[j];
+                      notas[j] = notas[j + 1];
+                      notas[j + 1] = temp;
+                  }
+              }
+          }
+      }
+      public static double calcularMediana(int[] notas) {
+          int n = notas.length;
+          if (n % 2 == 0) {
+              return (notas[n / 2 - 1] + notas[n / 2]) / 2.0;
+          } else {
+              return notas[n / 2];
+          }
+      }
+
+      public static void imprimirNotas(int[] notas) {
+          System.out.print("Notas Ordenadas: [");
+          for (int i = 0; i < notas.length; i++) {
+              System.out.print(notas[i]);
+              if (i < notas.length - 1) System.out.print(", ");
+          }
+          System.out.println("]");
+      }
+   }
+7. Escreva um programa que leia as pontuações de jogadores em um torneio e as ordene em ordem decrescente usando o
+algoritmo ordenação. O programa deve exibir as pontuações ordenadas e determinar a pontuação mais alta em tempo
+constante. O programa deve receber a entrada fornecida pelo usuário.
+
+   Entrada: [250, 300, 150, 400, 350]
+   Saída:
+   Pontuações Ordenadas: [400, 350, 300, 250, 150]
+   Pontuação Mais Alta: 400
+
+import java.util.Scanner;
+
+public class PontuacoesJogos {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o número de jogadores: ");
+        int n = scanner.nextInt();
+
+        int[] pontuacoes = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Digite a pontuação do jogador " + (i + 1) + ": ");
+            pontuacoes[i] = scanner.nextInt();
+        }
+
+        ordenarDecrescente(pontuacoes);
+
+        imprimirPontuacoes(pontuacoes);
+
+        System.out.println("Pontuação Mais Alta: " + pontuacoes[0]);
+
+    }
+    public static void ordenarDecrescente(int[] pontuacoes) {
+        int n = pontuacoes.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (pontuacoes[j] < pontuacoes[j + 1]) {
+                    int temp = pontuacoes[j];
+                    pontuacoes[j] = pontuacoes[j + 1];
+                    pontuacoes[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void imprimirPontuacoes(int[] pontuacoes) {
+        System.out.print("Pontuações Ordenadas: [");
+        for (int i = 0; i < pontuacoes.length; i++) {
+            System.out.print(pontuacoes[i]);
+            if (i < pontuacoes.length - 1) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+}
+8. Uma lista de pacientes com dados de gravidade e tempo de espera deve ser ordenada de forma que os mais graves sejam
+atendidos primeiro. Em caso de empate, quem espera há mais tempo tem prioridade.
+
+    public class ClassificacaoCrises {
+
+        static class Paciente {
+            String nome;
+            int gravidade;
+            int tempoEspera;
+
+            public Paciente(String nome, int gravidade, int tempoEspera) {
+                this.nome = nome;
+                this.gravidade = gravidade;
+                this.tempoEspera = tempoEspera;
+            }
+
+    public static void ordenarPacientes(Paciente[] pacientes) {
+        int n = pacientes.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (pacientes[j].gravidade < pacientes[j + 1].gravidade ||
+                    (pacientes[j].gravidade == pacientes[j + 1].gravidade &&
+                     pacientes[j].tempoEspera < pacientes[j + 1].tempoEspera)) {
+                    // Trocar os pacientes
+                    Paciente temp = pacientes[j];
+                    pacientes[j] = pacientes[j + 1];
+                    pacientes[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Paciente[] pacientes = {
+            new Paciente("João", 3, 5),
+            new Paciente("Maria", 3, 10),
+            new Paciente("Lucas", 5, 2)
+        };
+
+        ordenarPacientes(pacientes);
+
+        System.out.println("Ordem de Atendimento:");
+        for (Paciente p : pacientes) {
+            System.out.println(p.nome);
+        }
+    }
+}
+9. Desenvolva um sistema de "torneio" entre algoritmos de ordenação. Para cada vetor gerado, registre qual algoritmo
+realizou a ordenação mais rapidamente. A geração dos vetores deverá ser implementada por meio de uma função própria,
+capaz de criar diferentes tipos de entrada (por exemplo: vetores ordenados, invertidos e aleatórios).
+import java.util.Random;
+
+public class TorneioOrdenacao {
+
+    public static int[] gerarAleatorio(int tamanho) {
+        Random rand = new Random();
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = rand.nextInt(1000); // valores entre 0 e 999
+        }
+        return vetor;
+    }
+
+    public static int[] gerarOrdenado(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = i;
+        }
+        return vetor;
+    }
+
+    public static int[] gerarInvertido(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = tamanho - i;
+        }
+        return vetor;
+    }
+
+    public static void bubbleSort(int[] vetor) { // bubble
+        int n = vetor.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (vetor[j] > vetor[j + 1]) {
+                    int temp = vetor[j];
+                    vetor[j] = vetor[j + 1];
+                    vetor[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void insertionSort(int[] vetor) { // insertion
+        for (int i = 1; i < vetor.length; i++) {
             int chave = vetor[i];
             int j = i - 1;
-            while(j >= 0 && vetor[j] > chave) {
+            while (j >= 0 && vetor[j] > chave) {
                 vetor[j + 1] = vetor[j];
                 j--;
             }
             vetor[j + 1] = chave;
         }
+    }
+
+    public static void selectionSort(int[] vetor) { // selection
+        for (int i = 0; i < vetor.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < vetor.length; j++) {
+                if (vetor[j] < vetor[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = vetor[minIndex];
+            vetor[minIndex] = vetor[i];
+            vetor[i] = temp;
+        }
+    }
+
+    public static int[] copiarVetor(int[] original) {
+        int[] copia = new int[original.length];
+        System.arraycopy(original, 0, copia, 0, original.length);
+        return copia;
+    }
+
+    public static void compararAlgoritmos(String tipo, int[] vetorOriginal) {
+        System.out.println("\nTorneio para vetor: " + tipo);
+
+        long tempoBubble, tempoInsertion, tempoSelection;
+
+        int[] v1 = copiarVetor(vetorOriginal);
+        long inicio = System.nanoTime();
+        bubbleSort(v1);
+        tempoBubble = System.nanoTime() - inicio;
+
+        int[] v2 = copiarVetor(vetorOriginal);
+        inicio = System.nanoTime();
+        insertionSort(v2);
+        tempoInsertion = System.nanoTime() - inicio;
+
+        int[] v3 = copiarVetor(vetorOriginal);
+        inicio = System.nanoTime();
+        selectionSort(v3);
+        tempoSelection = System.nanoTime() - inicio;
+
+        System.out.println("Bubble Sort: " + tempoBubble + " ns");
+        System.out.println("Insertion Sort: " + tempoInsertion + " ns");
+        System.out.println("Selection Sort: " + tempoSelection + " ns");
+
+        long menor = Math.min(tempoBubble, Math.min(tempoInsertion, tempoSelection));
+        if (menor == tempoBubble) {
+            System.out.println("➡ Vencedor: Bubble Sort");
+        } else if (menor == tempoInsertion) {
+            System.out.println("➡ Vencedor: Insertion Sort");
+        } else {
+            System.out.println("➡ Vencedor: Selection Sort");
+        }
+    }
+
+    public static void main(String[] args) {
+        int tamanho = 1000;
+
+        int[] aleatorio = gerarAleatorio(tamanho);
+        int[] ordenado = gerarOrdenado(tamanho);
+        int[] invertido = gerarInvertido(tamanho);
+
+        compararAlgoritmos("Aleatório", aleatorio);
+        compararAlgoritmos("Ordenado", ordenado);
+        compararAlgoritmos("Invertido", invertido);
+    }
+}
+
+10. Implemente um contador de tempo de execução e aplique os algoritmos de ordenação nos seguintes cenários:
+    Vetores totalmente ordenados;
+    Vetores totalmente invertidos;
+    Vetores com elementos aleatórios;
+    Vetores de tamanhos variados (por exemplo: 10.000, 50.000, 100.000, 500.000 elementos).
+Registre e compare o tempo de execução e o número de operações realizadas em cada situação. Por fim, analise e
+justifique os resultados obtidos, considerando as características de cada algoritmo e tipo de entrada.
+import java.util.Random;
+
+public class ComparacaoOrdenacao {
+
+    static class Resultado {
+        long tempoNano;
+        long comparacoes;
+        long trocas;
+
+        Resultado(long tempoNano, long comparacoes, long trocas) {
+            this.tempoNano = tempoNano;
+            this.comparacoes = comparacoes;
+            this.trocas = trocas;
+        }
+    }
+
+    public static int[] gerarAleatorio(int tamanho) {
+        Random rand = new Random();
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = rand.nextInt(1_000_000);
+        }
         return vetor;
     }
 
-    private double calculandoMediana(double[] vetor) {
-        int n = vetor.length;
-        if(n % 2 != 0) {
-            return vetor[n / 2];
-        } else {
-            return (vetor[(n / 2) - 1] + vetor[n / 2]) / 2.0;
+    public static int[] gerarOrdenado(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = i;
+        }
+        return vetor;
+    }
+
+    public static int[] gerarInvertido(int tamanho) {
+        int[] vetor = new int[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            vetor[i] = tamanho - i;
+        }
+        return vetor;
+    }
+
+    public static Resultado bubbleSort(int[] vetor) {
+        int[] v = vetor.clone();
+        long comparacoes = 0, trocas = 0;
+        int n = v.length;
+        long inicio = System.nanoTime();
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                comparacoes++;
+                if (v[j] > v[j + 1]) {
+                    int temp = v[j];
+                    v[j] = v[j + 1];
+                    v[j + 1] = temp;
+                    trocas++;
+                }
+            }
+        }
+
+        long tempo = System.nanoTime() - inicio;
+        return new Resultado(tempo, comparacoes, trocas);
+    }
+
+    public static Resultado insertionSort(int[] vetor) {
+        int[] v = vetor.clone();
+        long comparacoes = 0, trocas = 0;
+        long inicio = System.nanoTime();
+
+        for (int i = 1; i < v.length; i++) {
+            int chave = v[i];
+            int j = i - 1;
+            comparacoes++;
+            while (j >= 0 && v[j] > chave) {
+                v[j + 1] = v[j];
+                j--;
+                trocas++;
+                if (j >= 0) comparacoes++;
+            }
+            v[j + 1] = chave;
+        }
+
+        long tempo = System.nanoTime() - inicio;
+        return new Resultado(tempo, comparacoes, trocas);
+    }
+
+    public static Resultado selectionSort(int[] vetor) {
+        int[] v = vetor.clone();
+        long comparacoes = 0, trocas = 0;
+        long inicio = System.nanoTime();
+
+        for (int i = 0; i < v.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < v.length; j++) {
+                comparacoes++;
+                if (v[j] < v[min]) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                int temp = v[i];
+                v[i] = v[min];
+                v[min] = temp;
+                trocas++;
+            }
+        }
+
+        long tempo = System.nanoTime() - inicio;
+        return new Resultado(tempo, comparacoes, trocas);
+    }
+
+    public static void executarTestes(int tamanho) {
+        System.out.println("\n### Teste com vetor de tamanho: " + tamanho);
+
+        int[] aleatorio = gerarAleatorio(tamanho);
+        int[] ordenado = gerarOrdenado(tamanho);
+        int[] invertido = gerarInvertido(tamanho);
+
+        testar("Aleatório", aleatorio);
+        testar("Ordenado", ordenado);
+        testar("Invertido", invertido);
+    }
+
+    public static void testar(String tipo, int[] vetor) {
+        System.out.println("\nTipo: " + tipo);
+
+        Resultado r1 = bubbleSort(vetor);
+        Resultado r2 = insertionSort(vetor);
+        Resultado r3 = selectionSort(vetor);
+
+        System.out.println("Bubble Sort: Tempo = " + r1.tempoNano / 1_000_000 + " ms | Comparações = "
+        + r1.comparacoes + " | Trocas = " + r1.trocas);
+        System.out.println("Insertion Sort: Tempo = " + r2.tempoNano / 1_000_000 + " ms | Comparações = "
+        + r2.comparacoes + " | Trocas = " + r2.trocas);
+        System.out.println("Selection Sort: Tempo = " + r3.tempoNano / 1_000_000 + " ms | Comparações = "
+        + r3.comparacoes + " | Trocas = " + r3.trocas);
+    }
+
+    public static void main(String[] args) {
+        int[] tamanhos = {10_000, 50_000, 100_000};
+        for (int tamanho : tamanhos) {
+            executarTestes(tamanho);
         }
     }
+}
