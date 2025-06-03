@@ -159,8 +159,8 @@ print('Shape 3:',tabela3.shape)
 print("Shape 4:", tabela4.shape)
 #%%
 # 18- imprimir todas colunas da tabela3
-tabela3_t = ??
-print('Colunas tabela 3', tabela3_t)
+for coluna in tabela3:
+    print('Colunas tabela 3', coluna)
 #%%
 # 19- transformar a tabela 3 em uma lista, e colocar dentro da variável: lista3
 #       imprimir a lista3
@@ -173,14 +173,19 @@ print(lista4)
 #%%
 lista4 = tabela4.flatten()
 print(lista4)
+
+#%%
+# para transformar a lista em uma lista simples
+lista3 = [item for sublist in lista3 for item in sublist]
+print('Transformando tabela 3 em lista 3:', lista3)
 #%%
 # 20- imprimir na tela, da lista3, os elementos de índice: 1, 4, 7 e 8
-
-
-
+print('Imprimindo índices:',lista3[1],lista3[4],lista3[7])
 
 # %%
 # anotação aula 27/05
 lista3 = [item for sublist in lista3 for item in sublist]
 print(lista3)
+# é uma list comprehension que "achata" (ou flatten) essa estrutura, transformando-a em uma lista simples, 
+# contendo todos os elementos internos das sublistas.
 # %%
