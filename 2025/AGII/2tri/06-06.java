@@ -11,6 +11,17 @@ public class linkedList{
       head = novoElemento;
     }
 
+    public void adicionarFim(int valor) {
+      if(head == null) {adicionarInicio(int valor);} 
+      else {
+        No novoElemento = new No(valor);
+        No aux = head;
+        while(aux.proximoValor != null) {
+          aux = aux.proximoValor;
+        }
+        aux.proximoValor = novoElemento;
+    }
+
 
     public void imprimir() {
       No aux = head;
