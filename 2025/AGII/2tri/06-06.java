@@ -22,6 +22,8 @@ public class linkedList{
         aux.proximoValor = novoElemento;
     }
 
+    public void adicionarMeio(int valor, int valorReferencia) {}
+
 
     public void imprimir() {
       No aux = head;
