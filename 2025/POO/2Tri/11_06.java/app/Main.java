@@ -3,6 +3,7 @@ package app;
 
 import model.Animal;
 import model.Ave;
+import model.Mamifero;
 
 public class Main {
   public static void main(String[] args) {
@@ -16,6 +17,9 @@ public class Main {
 
     List<Animal> listaAnimal = new ArrayList<Animal>(20);
     listaAnimal.add(queroQuero);
+
+    Mamifero vaca = new Mamifero(10, 150, "Vaca", true, "reto");
+    vaca.emitirSom();
     
   }
 }
