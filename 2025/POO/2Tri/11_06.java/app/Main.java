@@ -18,7 +18,7 @@ public class Main {
     List<Animal> listaAnimal = new ArrayList<Animal>(20);
     listaAnimal.add(queroQuero);
 
-    Mamifero vaca = new Mamifero(10, 150, "Vaca", true, "reto");
+    Mamifero vaca = new Mamifero(10, 150, "Vaca", true, true);
     vaca.emitirSom();
     
   }
