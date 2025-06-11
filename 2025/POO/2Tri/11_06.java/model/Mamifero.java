@@ -7,8 +7,6 @@ public class Mamifero extend Animal {
 
   public Mamifero (int idade, double peso, String nomePopular, boolean isTemPelo, boolean rabo, String som) {
     super(idade, peso, nomePopular);
-    this.isTemPelo = isTemPelo;
-    this.rabo = rabo;
     this.som = som;
   }
 
@@ -16,8 +14,21 @@ public class Mamifero extend Animal {
     return isTemPelo;
   }
 
+  public void setIsTemPelo(boolean isTemPelo) {
+    this.isTemPelo = isTemPelo;
+  }
+
   public boolean rabo() {
     return rabo;
+  }
+
+public void setRabo(boolean rabo) {
+  this.rabo = rabo;
+}
+
+  @Override
+  public String toString() {
+    return "Nome: " + nomePopular + " Rabo: " + rabo
   }
 
  // @Override
