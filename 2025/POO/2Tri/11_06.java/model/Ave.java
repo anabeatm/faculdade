@@ -6,7 +6,7 @@ public class Ave extend Animal {
   private String corOvo;
   private boolean voa;
   
-  public Ave(int idade, double peso. String nomePopular, double envergadura, String formatoBico, String corOvo, boolean voa) {
+  public Ave(int idade, double peso, String nomePopular, double envergadura, String formatoBico, String corOvo, boolean voa) {
     super(idade, peso, nomePopular); // --> comando para chamar construtores de classes superiores
     this.evergadura = envergadura;
     this.formatoBico = formatoBico;
