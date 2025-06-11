@@ -1,13 +1,13 @@
 package model;
 
 public class Mamifero extend Animal {
-  private boolean temPelo;
-  private String rabo;
+  private boolean isTemPelo;
+  private boolean rabo;
   private String som;
 
-  public Mamifero (int idade, double peso, String nomePopular, boolean temPelo, String rabo, String som) {
+  public Mamifero (int idade, double peso, String nomePopular, boolean isTemPelo, boolean rabo, String som) {
     super(idade, peso, nomePopular);
-    this.temPelo = temPelo;
+    this.isTemPelo = isTemPelo;
     this.rabo = rabo;
     this.som = som;
   }
