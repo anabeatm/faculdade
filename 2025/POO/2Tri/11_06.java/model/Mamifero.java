@@ -12,6 +12,14 @@ public class Mamifero extend Animal {
     this.som = som;
   }
 
+  public boolean isTemPelo() {
+    return isTemPelo;
+  }
+
+  public boolean rabo() {
+    return rabo;
+  }
+
  // @Override
    /// public void emitirSom() {
      // System.out.println("")
