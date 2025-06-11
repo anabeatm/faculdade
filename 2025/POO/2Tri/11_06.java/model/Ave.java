@@ -13,4 +13,9 @@ public class Ave extend Animal {
     this.corOvo = corOvo;
     this.voa = voa;
   } // necessário existir um construtor padrão na classe mãe ou NENHUM construtor; sem um construtor padrão é possível utilizar o super
+
+  @Override
+    public void emitirSom() {
+      System.out.println("pia");
+    }
 }
