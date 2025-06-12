@@ -35,4 +35,9 @@ public void setRabo(boolean rabo) {
    /// public void emitirSom() {
      // System.out.println("")
    // }
+
+  @Override
+    public void locomocao() {
+      System.out.println("anda");
+    }
 }
