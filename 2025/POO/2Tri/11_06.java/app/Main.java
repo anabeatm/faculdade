@@ -20,6 +20,8 @@ public class Main {
 
     Mamifero vaca = new Mamifero(10, 150, "Vaca", true, true);
     vaca.emitirSom();
+
+    listaAnimal.add(vaca);
     
   }
 }
