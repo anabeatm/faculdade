@@ -18,4 +18,8 @@ public class Ave extend Animal {
     public void emitirSom() {
       System.out.println("pia");
     }
+  @Override
+    public void locomocao() {
+      System.out.println("voa");
+    }
 }
